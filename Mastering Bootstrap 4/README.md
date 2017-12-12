@@ -1,5 +1,6 @@
 # Key Learning Points Form Mastering Boostrap 4 course (Published by Packt Publishing, 2017)
 
+## 1. BOOTSTRAP OVERVIEW
 - In general __bootstrap__ is a library that you bring to your website and a JavaScript library. It is designed for various devices sizes.
 - __DOM__ - Document Object Model. All of the content on the website loads into DOM.
 - __Boostrap containers__ - Container readjust depending on the size of the screen. There are two types of containers: <em>container</em> and <em>container fluid</em>. Fluid container takes all the available space (100% vide)
@@ -38,7 +39,14 @@
 					<footer class="blockquote-footer">By Paulina</footer>
 				</blockquote>
     ```
+
+
+## 2. TOOLS AND COMPONENTS
+#### Text styles
 -
+
+
+
 
 
 
