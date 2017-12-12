@@ -14,8 +14,31 @@
   </div>
   ```
 -
-- __Jumbotrone__
+- __Booststrap Jumbotrone__ - is used for marketing messages. Example of the code in body:
+  ```
+  < div class="col-sm-6 box">
+    <div class=jumbotron">
+      <h1>Marketing message</h1>
+      <p>this is the best product<a
+      class="btn btn-primary" href="#">BUY NOW</a></p>
+    </div>
+  </div>
+  ```
 
+- __Boostrap typography__ -
+  ```
+  <div class="row">
+			<div class="col-sm-6 box">
+
+		    <!-- This code reverses the quote <blockquote
+            class="blockquote blockquote-reverse"> -->
+
+				<blockquote class="blockquote blockquote-reverse">
+					<p>This is my quote</p>
+					<footer class="blockquote-footer">By Paulina</footer>
+				</blockquote>
+    ```
+-
 
 
 
