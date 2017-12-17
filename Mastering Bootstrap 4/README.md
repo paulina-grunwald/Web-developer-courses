@@ -54,10 +54,22 @@
 - __A card__ is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
 
 ```html
-<div class="card">
-			content within card
-		</div>
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 ```
+- Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+    - <em>Blocks</em>
+    - <em>Titles, text, and links</em>
+    - <em>Images</em>
+    - <em>List groups</em>
+    - <em>Kitchen sink</em>
+    - <em>Header and footer</em>
 
 #### Boostrap Images
 #### Boostrap Nav
@@ -66,5 +78,9 @@
 #### Boostrap Aligment and Styling
 #### Boostrap Other compontents
 
+## Simple Single Page website
+- for initial design we can use following website: https://wireframe.cc/
+
 ## References:
 - https://v4-alpha.getbootstrap.com/layout/grid/
+- https://v4-alpha.getbootstrap.com/components/card/

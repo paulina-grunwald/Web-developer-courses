@@ -10,7 +10,9 @@
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
-		
+			.card{
+				max-width:350px;
+			}
 	</style>
 </head>
 <body>
@@ -20,9 +22,18 @@
 			content within card
 		</div>
 
-		<!-- card content create a box with outline -->
-		<div class="card">
-			<div class="card-block">content within card</div>
+		<!-- card content create a box with outline (including padding) -->
+		<!-- it's also possible to add header and footer to the card -->
+		<div class="card"> 
+			<img src="http://placehold.it/350x150" class="card-img-top">
+			<div class="card-header">Header</div>
+			<div class="card-block">
+				<h3 class="card-title">This is my product</h3>
+				<span class="card-subtitle">content within card</span>
+				<p class="card-text">product information and such <a href="" class="card-link btn btn-primary">buy now</a></p>
+
+			</div>
+		<div class="card-footer">Footer</div>
 		</div>
 
 
