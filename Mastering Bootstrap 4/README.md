@@ -7,7 +7,8 @@
 - __Boostrap containers__ - Container readjust depending on the size of the screen. There are two types of containers: <em>container</em> and <em>container fluid</em>. Fluid container takes all the available space (100% vide)
  contrainer fluid.
 - __Grid system__ is at the core of bootstrap and allows to do responsive web design. It is based on <em>12 col system</em> and <em>media query</em>. New size 'Extra large' was added in the boostrap4. If you want to create two column website you can create two
-  ```
+
+  ```html
   <div class="container">
     <div class="row">
       <div class="col-xs-6">xs column 1</div>
@@ -17,7 +18,8 @@
   ```
 -
 - __Booststrap Jumbotrone__ - is used for marketing messages. Example of the code in body:
-  ```
+
+  ```html
   < div class="col-sm-6 box">
     <div class=jumbotron">
       <h1>Marketing message</h1>
@@ -27,8 +29,9 @@
   </div>
   ```
 
-- __Boostrap typography__ -
-  ```
+- __Boostrap typography__
+
+  ```html
   <div class="row">
 			<div class="col-sm-6 box">
 
@@ -43,13 +46,25 @@
 
 
 ## 2. TOOLS AND COMPONENTS
+
 #### Text styles
--
 
+#### Boostrap Cards
 
+- __A card__ is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
 
+```html
+<div class="card">
+			content within card
+		</div>
+```
 
-
+#### Boostrap Images
+#### Boostrap Nav
+#### Boostr Buttons
+#### Boostrap Grouping
+#### Boostrap Aligment and Styling
+#### Boostrap Other compontents
 
 ## References:
 - https://v4-alpha.getbootstrap.com/layout/grid/
