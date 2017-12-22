@@ -1,4 +1,4 @@
-# Key Learning Points Form Mastering Boostrap 4 course (Published by Packt Publishing, 2017)
+# Key Learning Points Form [Mastering Boostrap 4 course](https://www.safaribooksonline.com/library/view/mastering-bootstrap-4/9781787124141/) (Published by Packt Publishing, 2017)
 
 ## 1. BOOTSTRAP OVERVIEW
 - In general __bootstrap__ is a library that you bring to your website and a JavaScript library. It is designed for various devices sizes.
