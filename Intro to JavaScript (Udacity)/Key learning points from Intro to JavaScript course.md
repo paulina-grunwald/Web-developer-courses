@@ -74,7 +74,8 @@ greeting + " World!";
 
 It's recommended to use __camelCase__ wen creating names of variables in javascript.
 
-__***Exercise***__
+__***Exercise 1***__
+
 Use the Celsius-to-Fahrenheit formula to set the fahrenheit varible: F = C x 1.8 + 32. Log the fahrenheit variable to the console.
  ```javascript
 var celsius = 12;
@@ -82,7 +83,50 @@ var fahrenheit = celsius * 1.8 + 32;
 console.log(fahrenheit);
 ```
 
+__Indexing__ works the same way as in python.
+```javascript
+var name = "James";
+name[0];
+//Returns: "J"
+```
+__Quotes within strings__ - If you want to use quotes inside a string, and have JavaScript not misunderstand your intentions, you’ll need a different way to write quotes. Thankfully, JavaScript has a way to do this using the backslash character ( __\__ ). e.g
+```code
+console.log("The man whispered, \"please speak to me.\"")
+```
 
+__Special characters__
+```
+Code     Character
+\\	     \ (backslash)
+\"	     '' (double quote)
+\'	     ' (single quote)
+\n	     newline
+\t	     tab
+```
+
+__Null, Undefined, and NaN__
+
+__null__ - data type that has no value
+```javascript
+var x = null;
+```
+
+__undefined__ - data type that indicates absence of value
+```javascript
+var x;
+console.log(x);
+```
+__NaN__ stands for __"Not-A-Number"__ and it's often returned indicating an error with number operations. For instance, if you wrote some code that performed a math calculation, and the calculation failed to produce a valid number, NaN might be returned.
+
+__implicit type coercion__ - you do not need to specify data type writing javascript code. The code is interpreted by JavaScript engine and it will be automatically converted into the "appropiate" data types.
+
+ __A strongly typed language__ is a programming language that is more likely to generate errors if data does not closely match an expected type. Because JavaScript is loosely typed, you don’t need to specify data types; however, this can lead to errors that are hard to diagnose due to implicit type coercion.
+
+__Strict equality__ - normally used in JavAscipt to perfom comparision (===)
+
+__Semicolons__ - In JavaScript semicolons make it clear where one statement ends and another begins.
+
+## Conditionals
 
 # REFERENCES
 - [JavaScript style guide](https://github.com/udacity/frontend-nanodegree-styleguide)
