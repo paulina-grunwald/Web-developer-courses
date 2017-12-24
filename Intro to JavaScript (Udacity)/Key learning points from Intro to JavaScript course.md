@@ -128,5 +128,49 @@ __Semicolons__ - In JavaScript semicolons make it clear where one statement ends
 
 ## Conditionals
 
+```javascript
+var price = 15.00;
+var money = 20.00;
+
+if(money >= price) {
+  console.log("buy the hammer");
+} else {
+  console.console.log("don't buy hammer");
+}
+```
+__Else if statement example__
+
+```javascript
+var weather = "sunny";
+
+if (weather === "snow") {
+  console.log("Bring a coat.");
+} else if (weather === "rain") {
+  console.log("Bring a rain jacket.");
+} else {
+  console.log("Wear what you have on.");
+}
+```
+
+__Exercise__
+Write an if...else statement that prints `even` if the number is even and prints `odd` if the number is odd.  Note - make sure to print only the string "even" or the string "odd"
+
+```javascript
+var number = 13;
+
+if (number%2 === 0) {console.log("even");
+
+} else {console.log("odd");
+
+}
+```
+
+__Logical Operators__
+1. value1 __&&__ value2 - Logical AND - returns true if both value1 and vale 2 evaluate to true.
+2. value1 __||__ value2 - Logical OR - returns true if either value1 or value2 (or even both!) evaluate to true.
+3. !value1 - Logical NOT - returns the opposite of value1. If value1 is true then !value1 is false.
+
+
+
 # REFERENCES
 - [JavaScript style guide](https://github.com/udacity/frontend-nanodegree-styleguide)
