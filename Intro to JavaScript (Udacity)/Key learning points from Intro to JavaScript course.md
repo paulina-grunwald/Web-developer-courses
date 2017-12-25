@@ -170,6 +170,44 @@ __Logical Operators__
 2. value1 __||__ value2 - Logical OR - returns true if either value1 or value2 (or even both!) evaluate to true.
 3. !value1 - Logical NOT - returns the opposite of value1. If value1 is true then !value1 is false.
 
+- __short-circuiting__ - describes the event when later arguments in a logical expression are not considered because the first argument already satisfies the condition.
+
+__Exercise__:
+
+```javascript
+var colt = "not busy";
+var weather = "nice";
+
+if (colt === "not busy" && weather === "nice") {
+  console.log("go to the park");
+}
+
+```
+__Exercise__:
+
+Write a single if statement that logs out the message:
+"I'd like two scoops of __________ ice cream in a __________ with __________."
+ ...only if:
+ - flavor is "vanilla" or "chocolate"
+ - vessel is "cone" or "bowl"
+ - toppings is "sprinkles" or "peanuts"
+
+```javascript
+var flavor = "chocolate";
+var vessel = "bowl";
+var toppings = "sprinkles";
+
+// Add your code here
+
+if (((flavor === "vanilla")|| (flavor=== "chocolate"))
+&& ((vessel==="cone") || (vessel === "bowl"))
+&& ((toppings === "sprinkles") || (toppings === "peanuts")))
+{console.log("I'd like two scoops of "+ flavor +" ice cream in a "+
+    vessel+" with "+toppings+".");
+}
+
+```
+
 
 
 # REFERENCES
