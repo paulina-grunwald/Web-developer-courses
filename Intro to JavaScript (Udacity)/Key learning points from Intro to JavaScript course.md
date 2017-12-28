@@ -126,6 +126,16 @@ __Strict equality__ - normally used in JavAscipt to perfom comparision (===)
 
 __Semicolons__ - In JavaScript semicolons make it clear where one statement ends and another begins.
 
+Data types:
+- Number
+- String
+- Boolean (A boolean represents a logical entity and can have one of two literal values: true, and false.)
+- Symbol
+- Null (A variable that contains null contains no valid number, string, boolean, array, or object. You can erase the contents of a variable (without deleting the variable) by assigning it the null value.)
+- Undefined(The undefined value is returned when you use an object property that does not exist, or a variable that has been declared, but has never had a value assigned to it.)
+
+JavaScript is a loosely typed or dynamic language, meaning you don't need to declare a variable's type ahead of time and the language autmatically determines a variable's type while the program is being processed. 
+
 ## Conditionals
 
 ```javascript
@@ -212,3 +222,4 @@ if (((flavor === "vanilla")|| (flavor=== "chocolate"))
 
 # REFERENCES
 - [JavaScript style guide](https://github.com/udacity/frontend-nanodegree-styleguide)
+- https://www.hackerrank.com/challenges/js10-data-types/topics
