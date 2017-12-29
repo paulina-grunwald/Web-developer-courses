@@ -134,7 +134,7 @@ Data types:
 - Null (A variable that contains null contains no valid number, string, boolean, array, or object. You can erase the contents of a variable (without deleting the variable) by assigning it the null value.)
 - Undefined(The undefined value is returned when you use an object property that does not exist, or a variable that has been declared, but has never had a value assigned to it.)
 
-JavaScript is a loosely typed or dynamic language, meaning you don't need to declare a variable's type ahead of time and the language autmatically determines a variable's type while the program is being processed. 
+JavaScript is a loosely typed or dynamic language, meaning you don't need to declare a variable's type ahead of time and the language autmatically determines a variable's type while the program is being processed.
 
 ## Conditionals
 
