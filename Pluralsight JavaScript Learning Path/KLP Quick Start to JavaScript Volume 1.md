@@ -2,6 +2,13 @@
 
 #### Overview
 
+```JavaScript
+console.log("Hello Wold");
+console.warn("Warning!");
+console.error("Error!")
+
+```
+
 Creating variable, using prompt and alert:
 ```JavaScript
 
@@ -88,4 +95,24 @@ Create adventure game using:
 - prompt()
 - alert()
 - confirm()
-- Opertors like ===, !=, &&, >, <, +, -, *,
+- Opertors like ===, !=, &&, >, <, +, -, *
+
+```JavaScript
+var randomNumber = Math.round(Math.random()*6)
+
+alert("You are located in the forest in which there are a lot of monsters. Be careful! You will have to throw the dice in order to go through the forest.");
+
+//Start or exit the game
+var startGame = prompt("Do you want to start the game and throw the dice?").toLowerCase();
+if (startGame === "yes"){
+  console.log("Ok! Now you can throw the dice");
+}
+else{
+  console.log("Now you exit the game!");
+}
+
+console.log("You have throwed the dice and you are allowed to make " + randomNumber + " steps.")
+
+alert("You are located in the forest in which there are a lot of monsters. Be careful! You will have to throw the dice in order to go through the forest.");
+
+```
