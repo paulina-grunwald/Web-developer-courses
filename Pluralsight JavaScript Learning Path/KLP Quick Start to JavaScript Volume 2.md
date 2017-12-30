@@ -170,6 +170,8 @@ See Assignment 1
 ### 9. Plan then Create
 See Assignment 2
 
+### 10. Final Assignment
+See Assigment 3
 
 # Other references
 - https://www.w3schools.com/js/js_switch.asp
