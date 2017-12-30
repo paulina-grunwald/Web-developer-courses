@@ -69,6 +69,9 @@ __Loops__ are another form of control flow. They will loop through a block of co
 for (var i = 0; i < 11; i++){
   console.log(i);
 }
+
+### 3. Revisiting exercise from Volume 1
+
 ```
 <em>__Exercise 2:__</em>
 Print all numbers from 1 to 100 with three exceptions:
@@ -98,15 +101,74 @@ for (var i = 0; i <= 100; i++ ){
 ```
 
 
-### 3. Revisiting exercise from Volume 1
 ### 4. While Loops
-### 5. Functions
-### 6. Additional Practice
-### 7. Arrays
-### 8. Looping over an Array
-### 9 Creating a JavaScript file
-### 10. Plan then Create
+__Do...while__ loops execute once and continue as long as the specified confition is true.
 
+```JavaScript
+//do..while loop
+var i = 0;
+do{
+  console.log("i");
+  i++;
+}
+  while(i < 11);
+
+/*similar example with while loop*/
+var i = 0;
+while (i < 11){
+    console.log(i)
+    i++;
+}
+```
+
+For loop is useful if we know how many times the loop will have to run. If we are unsure of how many times our loop will have to run it's better to use do..while or while loops.
+
+### 5. Functions
+Functions allow us to associate a command with a action.
+
+Example of a function syntax:
+```JavaScript
+function sayHello(name){
+  console.log("Oh hi " + name)
+}
+//run function
+sayHello("Mark");
+```
+
+### 6. Arrays
+
+```JavaScript
+//create array
+var friends = ["Mark", "Paulina", "Alex"]
+
+//call Mark
+console.log([0]);
+
+//add item to the array on 3rd position
+friends[3] = "Mike"
+
+```
+### 7. Looping over an Array
+This example will show how to use array and loop in combination.
+
+```JavaScript
+//create array
+var friends = ["Mark", "Paulina", "Alex", "Maria", "Marco", "Joseph"];
+
+function greetFriends(){
+  for(var i = 0; i < friends.length; i++){
+    console.log("Hello " + friends[i]);
+  }
+}
+
+greetFriends();
+```
+
+### 8 Creating a JavaScript file
+See Assignment 1
+
+### 9. Plan then Create
+See Assignment 2
 
 
 # Other references
