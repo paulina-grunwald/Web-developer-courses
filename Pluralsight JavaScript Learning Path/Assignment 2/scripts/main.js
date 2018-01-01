@@ -34,3 +34,10 @@ After, look for ways you might improve your code!
 */
 
 var beginningScenarios = [""];
+
+weaponList = ["baseball bat", "rubber chicken", "saw", "gun"]
+
+var weapon = weaponList[r]
+
+
+alert("")
