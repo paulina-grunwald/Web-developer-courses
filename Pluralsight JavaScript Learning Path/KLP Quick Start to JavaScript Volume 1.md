@@ -3,18 +3,20 @@
 #### Overview
 
 ```JavaScript
-console.log("Hello Wold");
+//print "Hello World"
+console.log("Hello World");
+//print warning
 console.warn("Warning!");
+//print error
 console.error("Error!")
 
 ```
 
 Creating variable, using prompt and alert:
 ```JavaScript
-
-myFavouriteMovie = "Totoro"
-var myFavouriteMovie = prompt("What is your favourite movie?");
-alert("My favourite movie is" + " " + );
+//print the prompt
+var myFavouriteMovie = prompt("What is your favorite movie?");
+alert("My favorite movie is" + " " + myFavouriteMovie);
 ```
 
 Creating random number using __Math.random()__:
@@ -95,12 +97,17 @@ Create adventure game using:
 - prompt()
 - alert()
 - confirm()
-- Opertors like ===, !=, &&, >, <, +, -, *
+- Operators like ===, !=, &&, >, <, +, -, *
+
 
 ```JavaScript
-var randomNumber = Math.round(Math.random()*6)
 
-alert("You are located in the forest in which there are a lot of monsters. Be careful! You will have to throw the dice in order to go through the forest.");
+// create random number between 1-6
+var randomNumber = Math.round(Math.random()*6)
+// create coinThrow number between 1-2
+var coinThrow = Math.round(Math.random()*2)
+
+alert("You are located in the forest in which there are a lot of monsters and other dangerous things. Be careful! You will have to throw the dice in order to go through the forest.");
 
 //Start or exit the game
 var startGame = prompt("Do you want to start the game and throw the dice?").toLowerCase();
@@ -111,8 +118,14 @@ else{
   console.log("Now you exit the game!");
 }
 
-console.log("You have throwed the dice and you are allowed to make " + randomNumber + " steps.")
+console.log("You have thrown the dice and you are allowed to make " + randomNumber + " steps.");
 
-alert("You are located in the forest in which there are a lot of monsters. Be careful! You will have to throw the dice in order to go through the forest.");
+alert("You are passing near very big oak tree. You can see big squirrel on that tree. Flip the coin - if you get heads you will pass safely and if you get tail squirrel will bite you.");
+if(coinThrow === 1){
+  console.log("You get heads. You can pass safely!");
+} else {
+  console.log("you are bitten by the squirrel and you die!");
+  console.log("GAME OVER");
+}
 
 ```
