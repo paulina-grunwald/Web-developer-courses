@@ -62,17 +62,18 @@ switch(sign){
 
 __Loops__ are another form of control flow. They will loop through a block of code until an original specified condition is no longer true.
 
-<em>__Exercise 1:__</<em>
+__Exercise 1:__
+
 ```JavaScript
 //print numbers 1-10 to the console
 //++ it's increment
 for (var i = 0; i < 11; i++){
   console.log(i);
 }
+```
 
 ### 3. Revisiting exercise from Volume 1
 
-```
 <em>__Exercise 2:__</em>
 Print all numbers from 1 to 100 with three exceptions:
 - if number is divisible by 3, print fizz
@@ -102,6 +103,7 @@ for (var i = 0; i <= 100; i++ ){
 
 
 ### 4. While Loops
+
 __Do...while__ loops execute once and continue as long as the specified confition is true.
 
 ```JavaScript
@@ -127,6 +129,7 @@ For loop is useful if we know how many times the loop will have to run. If we ar
 Functions allow us to associate a command with a action.
 
 Example of a function syntax:
+
 ```JavaScript
 function sayHello(name){
   console.log("Oh hi " + name)
@@ -171,7 +174,7 @@ See Assignment 1
 See Assignment 2
 
 ### 10. Final Assignment
-See Assigment 3
+See Assignment 3
 
 # Other references
 - https://www.w3schools.com/js/js_switch.asp
