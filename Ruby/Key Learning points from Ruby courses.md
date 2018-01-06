@@ -116,6 +116,54 @@ end
 
 ```
 
+
+#### Next
+
+The __next__ keyword can be used to skip over certain steps in the loop. For instance, if we don't want to print out the even numbers, we can write:
+
+```Ruby
+for i in 1..10
+  next if i % 2 == 0
+  print i
+end
+```
+
+#### The .each Iterator
+
+```Ruby
+array = [1,2,3,4,5,7,8,9,10]
+
+array.each do |x|
+  x += 2
+  print "#{x} "
+end
+```
+
+other example
+
+```Ruby
+odds = [1,3,5,7,9]
+# Add your code below!
+odds.each { |odd| print odd*4 }
+
+```
+
+#### The .times Iterator
+
+```Ruby
+10.times { print "This sentence will be printed 10 times!"}
+```
+
+#### Loop Operators
+```Ruby
+i = 0
+loop do
+  print "I love Ruby!"
+  i+=1
+  break if i == 5
+end
+```
+
 __.include?__ checks weather the string contains certain characters and evaluates to true if it finds what it's looking for and false otherwise.
 
 
@@ -144,7 +192,7 @@ __!__ you reverse the result. If you're false you're now true.
 
 ## Classes and Objects
 
-Class names start with a capital letter and use CamelCase.
+Class names start with a capital letter and use CamelCase
 To instantiate object from a new class we use __new__ method:
 
 ```Ruby
