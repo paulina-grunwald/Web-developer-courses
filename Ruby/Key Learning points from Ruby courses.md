@@ -1,16 +1,17 @@
 # Key learning points Ruby
+> By Paulina Grunwald
+
+> E-mail:paulina.grunwald@gmail.com
 
 ## General Overview
 
 Ruby is an __object-oriented language__, meaning it allows users to manipulate data structures called objects in order to build and execute programs. We'll learn more about objects later, but for now, all you need to know is everything in Ruby is an object.
 
-To create a variable without any value we can write
+To create a variable without any value we can write:
 ```Ruby
 variable = nil
 ```
-__Nil__ is a special object that signifies no value. If we type __nil.class__ the result will be __NilClass__.
-
-To check if the variable is __nil__ we cna use nil method:
+__Nil__ is a special object that signifies no value. If we type __nil.class__ the result will be __NilClass__. To check if the variable is __nil__ we cna use nil method:
 
 ```Ruby
 variable.nil?
@@ -20,34 +21,34 @@ __? mark__ is usually used for the methods that perform true-false check.
 
 __! mark__ is usually used for dangerous or sligthly unexpected e.g modifying the object in place instead returning modified coppy.
 
+Prining:
+ - __print__ command just takes whatever you give it and prints it to the screen.
 
- __Print__ command just takes whatever you give it and prints it to the screen.
+- __Puts__  adds a new (blank) line after the thing you want it to print.
 
-  __Puts__  adds a new (blank) line after the thing you want it to print.
+Other important ethods:
+- __.length__ of it, Ruby will return the length of the string (that is, the number of characters—letters, numbers, spaces, and symbols).
 
-__.length__ of it, Ruby will return the length of the string (that is, the number of characters—letters, numbers, spaces, and symbols).
-
-```Ruby
+  ```Ruby
 "I love espresso".length
 # ==> 15
 ```
 
-__.split__ - splits the string by selected Operators e.g "1,2,3,4 ".split(",")
-__.strip__ -removes white spaces
-__.reverse__ method it prints out a backwards version of the
+- __.split__ - splits the string by selected Operators e.g "1,2,3,4 ".split(",")
+- __.strip__ -removes white spaces
+- __.reverse__ method it prints out a backwards version of the
 string you gave it.
 
-__.upcase__ and __.downcase__ methods convert a string to ALL UPPER CASE or all lower case, respectively.
+- __.upcase__ and __.downcase__ methods convert a string to ALL UPPER CASE or all lower case, respectively.
 
-__Comments__
+- __Comments__
 ```Ruby
 =begin
 this is multi line
 comment
 =end
-
-#this is single name comment
 ```
+
 ### Inner and outer scope
 
 ```Ruby
