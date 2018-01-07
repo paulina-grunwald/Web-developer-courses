@@ -1,0 +1,15 @@
+####Q: what is a class of x?####
+x = 5
+x.class
+#=>Fixnum
+
+####Q: Get the first letter from string Paulina####
+string = "Paulina"
+string[0]
+#=>"p"
+
+####Q: Get first through 3rd element from string "Paulina"####
+string[0..2]
+
+####Q: Replace "i" in string "Paulina"####
+puts string.gsub(string[4],"m")
