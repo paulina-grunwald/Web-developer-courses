@@ -79,12 +79,20 @@ end
 
 puts multiply(x,y)
 
-=begin Q: Define a method called silly_check() that takes a number argument 
+=begin ####Q: Define a method called silly_check() that takes a number argument 
 and returns "The number is less than 5" if the argument is less than 5 
-and "The number is greater than or equal to 5" otherwise.
+and "The number is greater than or equal to 5" otherwise.####
 =end
 
+print "Please input a number between 0 and 10: "
+user_num = Integer(gets.chomp)
 
-
-
+def silly_check(num)
+	if num < 5
+		return "The number is less than 5"
+	else
+		return "The number is greater than or equal to 5"
+  end
+end
+puts silly_check(user_num)
 
