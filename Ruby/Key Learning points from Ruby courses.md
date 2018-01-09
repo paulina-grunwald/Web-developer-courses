@@ -26,7 +26,7 @@ Prining:
 
 - __Puts__  adds a new (blank) line after the thing you want it to print.
 
-Other important ethods:
+Other methods:
 - __.length__ of it, Ruby will return the length of the string (that is, the number of characters—letters, numbers, spaces, and symbols).
 
   ```Ruby
@@ -349,6 +349,40 @@ puts "abc".endcoding
 If you need to include single quote in the string add __\__ e.g
 '\'This is string\''.
 
+## Symbols
+
+Symbols aren't strings
+```ruby
+"string" == :string # false
+```
+```ruby
+menagerie = { :foxes => 2,
+  :giraffe => 1,
+  :weezards => 17,
+  :elves => 1,
+  :canaries => 4,
+  :ham => 1
+}
+
+puts menagerie[:foxes]
+````
+
+The __.object_id__ method gets the ID of an object—it's how Ruby knows whether two objects are the exact same object. Run the code in the editor to see that the two "strings" are actually different objects, whereas the :symbol is the same object listed twice
+```ruby
+puts "string".object_id
+puts "string".object_id
+
+puts :symbol.object_id
+puts :symbol.object_id
+#=>12536880
+#=>12536600
+#=>801308
+#=>801308
+
+```
+
+
+
 ### Regular expressions
 
 
@@ -371,11 +405,21 @@ def transcode (string_1)
     end
 end
 
+## Functions
+
+__Referencial transparency__ - A function is said to be referentially transparent if it, given the same input parameters, always produces the same output (return value)
+__Higher order function__ - function that does at least one of the following: takes one or more functions as arguments (i.e., procedural parameters), returns a function as its result.
+
+__Blocks__ are just chunks of code that you can pick up and drop into another method as an input. They're often called "anonymous functions" because they have no name but behave much like functions. They're like little helper functions... you don't find blocks just hanging around without some method (like #each) using them.
+```ruby
+[1, 2, 3].each { |num| print "#{num}!"}
+#=> 1! 2! 3!
+```
 
 
-## Methods in depth
-
+__Proc objects__ are blocks of code that have been bound to a set of local variables. Once bound, the code may be called in different contexts and still access those variables.
 
 # References
 - http://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html
 - https://www.safaribooksonline.com/library/view/ruby-cookbook/0596523696/ch08s07.html
+- http://rubylearning.com/satishtalim/ruby_symbols.html
