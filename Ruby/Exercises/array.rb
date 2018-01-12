@@ -142,3 +142,164 @@ p [1,2,3, 4, 5].length
 #=>5
 p [1,2,3, 4, 5].size
 #=>5
+
+#check if array contain number 1 and how many times it appears
+p [1,2,1, 1, 5].count(1)
+#=>3
+
+#### The .empty? and .nil? Methods on an Array ####
+
+puts [true, false,false].empty?
+#=>false
+
+puts [].empty?
+#=>true
+
+puts [].nil?
+#=>false
+
+letters = ("a".."j").to_a
+character = letters[40]
+p character.nil?
+#=>true
+
+
+##### The .first and .last Methods #####
+
+array = [1, 2, 3, 4, 5, 6, 7]
+p array.first
+#=>1
+p array.last
+#=>7
+
+#this will return array
+p array.first(1)
+#=>[1]
+p array.last(3)
+#=>[5, 6, 7]
+
+#write a function that return first num elements form the array
+def custom_first(arr, num = 0)
+  return arr[0] if num == 0
+  arr[0,num]
+end
+
+puts custom_first(array, 7)
+
+def custom_last(array, num = 0)
+  return array[-1] if num == 0
+  array[-num..-1]
+end
+
+
+##### The .push Method, the Shovel Operator, and the .insert Method####
+city = ["Paris", "Warsaw", "Amsterdam"]
+p city
+#=>["Paris", "Warsaw", "Amsterdam"]
+city.push("Bucharest")
+p city
+#=>["Paris", "Warsaw", "Amsterdam", "Bucharest"]
+
+#=>add element to the array using shovel operator
+city << "Berlin"
+p city
+
+#insert "Budapest" in position 0
+city.insert(0, "Budapest")
+p city
+
+
+#####  The .pop Method #####
+
+array = [1, 2, 3, 4, 5, 6]
+#remove last element form the arrays
+last_item = array.pop
+p last_item
+#=>6
+
+three_items = array.pop(3)
+p three_items
+#=>[3, 4, 5]
+
+
+puts
+
+
+
+#### The .shift and .unshift Methods #####
+#shift does the same thing as pop but at the beginning of the array
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+array_1 = array.shift(5)
+p array_1
+p array
+
+puts
+
+
+
+##### Equality and Inequality Operators with Arrays #####
+
+a = [1, 2, 3]
+b = [1, 2, 3, 4]
+c = [3, 2, 1]
+
+p a == b
+#=>false
+#if two arrays have the same element but in reverse order, they are not the same
+p a == c
+#=>false
+
+puts
+
+##### The Spaceship Operator #####
+# 0 - if two values are Equality
+# -1 - if the left side is smaller
+# 1 - if the right side is smaller
+# nil - if values can't be compared
+
+puts 3 <=> 4
+#=>-1
+puts 4 <=> 4
+#=>0
+
+p [1, 2, 3] <=> [1, 2, 5]
+#=> -1
+
+
+puts
+
+
+
+##### Convert Ranges to Arrays with the .to_a Method #####
+letters = "a".."z"
+p letters.class
+#range
+
+#convert range to array
+letters_array = letters.to_a
+print letters_array
+
+puts
+puts
+
+
+
+##### The .is_a? Predicate Method #####
+array = [1,2,4]
+p 1.is_a?(Fixnum)
+#=>true
+p array.is_a?(Array)
+#=>array
+
+arr = ["one", "two", "three"]
+if arr.is_a?(Array)
+  arr.each {|a| p a}
+end
+#=> two, three
+
+=begin
+Basic object
+object
+      Integer
+  Fixnum   Bignum
+=end
