@@ -190,7 +190,7 @@ p !!""
 
 puts
 
-#### The unless Keyword #####
+####The unless Keyword#####
 password = "secret"
 
 unless password == "secret"
@@ -198,3 +198,111 @@ unless password == "secret"
 else
   puts "This is correct password"
 end
+
+
+#check if the word contain selected letter
+#include method check if the string is included in other string
+word = "dog"
+unless word.include?("d")
+  puts "The word doesn't include letter d"
+else
+  puts "The word contains letter d"
+end
+#=>"The word contains letter d"
+
+puts
+
+
+#####The while Keyword#####
+i = 1
+
+while i <= 5
+  puts i
+  #incremept i with 1 on every loop run
+  i+=1
+end
+
+
+#check if user and password inputed by user are correct
+#status = true
+##  print "Please enter your username"
+  #username = gets.chomps.downcase
+#  print "Please enter your password"
+#  password = gets.chomp.downcase
+
+#  if username == "Mike" && password == "secret"
+#    puts "Password and username correct."
+#    status = false
+#  else
+#    "Goodbye! Your password and username were not correct"
+#  end
+#end
+
+
+puts
+
+#####The until Keyword#####
+i = 0
+until i > 6
+  puts i
+  i += 1
+end
+
+
+####fizzbuzz programme####
+
+def fizzbuzz(number)
+i = 1
+  while i <= number
+    if i%3 == 0 && i%5== 0
+      puts "fizzbuzz for #{i}"
+    elsif  i%3 == 0
+      puts "Fizz for #{i}"
+    elsif i%5 == 0
+      puts "Buzz for #{i}"
+    else
+      puts "Try another number"
+    end
+    i+=1
+  end
+end
+
+number = 20
+puts fizzbuzz(number)
+
+
+puts
+
+
+
+####Statement Modifiers / Inline Modifiers#####
+
+number = 5000
+
+if number > 2500
+  puts "This is a big number!"
+end
+
+#no end key required!
+puts "This is a big number!" if number > 2500
+
+
+puts
+
+
+#####Conditional Assignment####
+#used if you do not know if variable is nil or not
+
+#assign nil to variable
+y = nil
+p y
+
+#can assign value only if the y variable is nil
+y ||= 5
+puts y
+
+name = "Paulina"
+extract = 50
+letter = name[extract]
+letter ||= "Letter not found"
+p letter
