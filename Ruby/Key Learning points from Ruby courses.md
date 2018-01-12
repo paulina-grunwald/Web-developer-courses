@@ -3,6 +3,10 @@
 
 > E-mail:paulina.grunwald@gmail.com
 
+## Ruby documentation
+Good resource for Ruby documentation is __[rubydoc.info](http://www.rubydoc.info/stdlib/core)__.
+
+
 ## General Overview
 
 Ruby is an __object-oriented language__, meaning it allows users to manipulate data structures called objects in order to build and execute programs. We'll learn more about objects later, but for now, all you need to know is everything in Ruby is an object.
