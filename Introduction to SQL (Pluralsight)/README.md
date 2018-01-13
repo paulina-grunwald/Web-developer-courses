@@ -2,11 +2,13 @@
 
 >Witten by Paulina Grunwald
 
-#### Content table:
+
+### Content table:
 
 1. Understanding Syntax
 2. Querying Data with the SELECT Statement
-
+3. Filtering Results with the WHERE Clause
+4. Matching Different Data Tables with JOINs
 
 
 ## Understanding Syntax
@@ -34,6 +36,20 @@ DELETE FROM contacts WHERE id=2;
 ```
 
 #  Querying Data with the SELECT Statement
+
+We can query data using the select statement. This is the tipical syntax:
+
+SELECT <COLUMN_NAME>, <COLUMN_NAME> FROM <TABLE_NAME> ;
+
+__*__ - wildcard "SELECT list" character pulls all the columns from a
+
+It's a good practice to always table quality names of your collumns. Some databases will run faster in this way.
+
+SELECT person.first_name, person.last_name FROM person
+
+It's possible to alias the database name. For example instead of typing full database name e.g person we can alias it to p.
+
+
 
 
 # REFERENCES
