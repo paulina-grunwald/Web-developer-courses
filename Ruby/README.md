@@ -3,46 +3,59 @@
 
 > E-mail:paulina.grunwald@gmail.com
 
-## Ruby documentation
-Good resource for Ruby documentation is __[rubydoc.info](http://www.rubydoc.info/stdlib/core)__.
+### Content:
+1. Ruby documentation
+2. General Overview
+3. Control flow
+4. Classes and Objects
+5. Standard types
+6. Functions
 
+## 1. Ruby documentation
+If you are stuck with your code you can always visit __[rubydoc.info](http://www.rubydoc.info/stdlib/core)__ where you can find documentation for Ruby. It's very useful and for sure you can find there a lot of information.
 
-## General Overview
+## 2. General Overview
 
 Ruby is an __object-oriented language__, meaning it allows users to manipulate data structures called objects in order to build and execute programs. We'll learn more about objects later, but for now, all you need to know is everything in Ruby is an object.
 
 To create a variable without any value we can write:
+
 ```Ruby
 variable = nil
 ```
-__Nil__ is a special object that signifies no value. If we type __nil.class__ the result will be __NilClass__. To check if the variable is __nil__ we cna use nil method:
+__Nil__ is a special object that signifies no value. If we type __nil.class__ the result will be __NilClass__. To check if the variable is __nil__ we can use __.nil?__ method:
 
 ```Ruby
+# check if variable is empty
 variable.nil?
 # =>True
 ```
+
 __? mark__ is usually used for the methods that perform true-false check.
 
-__! mark__ is usually used for dangerous or sligthly unexpected e.g modifying the object in place instead returning modified coppy.
+__! mark__ is usually used for dangerous or slightly unexpected operations e.g modifying the object in place instead returning modified copy.
 
-Prining:
+Printing commands:
  - __print__ command just takes whatever you give it and prints it to the screen.
 
 - __Puts__  adds a new (blank) line after the thing you want it to print.
 
-Other methods:
-- __.length__ of it, Ruby will return the length of the string (that is, the number of characters—letters, numbers, spaces, and symbols).
+- __p__ - short version of puts
+
+
+
+### 2.1 Basic and useful methods:
+- __.length__ method in Ruby will return the length of the string (that is, the number of characters—letters, numbers, spaces, and symbols).
 
   ```Ruby
 "I love espresso".length
 # ==> 15
 ```
 
-- __.split__ - splits the string by selected Operators e.g "1,2,3,4 ".split(",")
-- __.strip__ -removes white spaces
+- __.split__ - this method splits the string by selected Operators e.g "1,2,3,4 ".split(",")
+- __.strip__ - method removes white spaces
 - __.reverse__ method it prints out a backwards version of the
 string you gave it.
-
 - __.upcase__ and __.downcase__ methods convert a string to ALL UPPER CASE or all lower case, respectively.
 
 - __Comments__
@@ -53,7 +66,7 @@ comment
 =end
 ```
 
-### Inner and outer scope
+### 2.2 Inner and outer scope
 
 ```Ruby
 variable_a = 10
@@ -64,21 +77,17 @@ end
 
 report
 puts variable_a
-# 5
-# 10
+#=> 5
+#=> 10
 ```
 
-The variable_a in the report method is not affected by variable_a outside of that method. These are called <em>local variables</em>. It's also possible to creat global variables using $ so they will be visible throughout the programme
+The variable_a in the report method is not affected by variable_a outside of that method. These are called <em>local variables</em>. It's also possible to create __global variables__ using $ so they will be visible throughout the program. e.g $variable_a = 10
 
-e.g $variable_a = 10
+## 3. Control flow
 
-## Control flow
+__Control flow__ gives us the flexibility we're looking for. We can select different outcomes depending on information the user types, the result of a computation, or the value returned by another part of the program. <em>Return<em> statements are used in flow control.
 
-__Control flow__ gives us the flexibility we're looking for. We can select different outcomes depending on information the user types, the result of a computation, or the value returned by another part of the program.
-
-Return statements are used for flow control.
-
-#### If, elsif and else
+### 3.1 If, elsif and else
 
 ```Ruby
 print "Integer please: "
@@ -94,7 +103,7 @@ end
 
 ```
 
-Instead outputing on every branch is possible to rewrite the code so the output is saved to the variable:
+Instead outputting on every branch is possible to rewrite the code so the output is saved to the variable:
 
 ```Ruby
 num_a = 10
@@ -122,7 +131,7 @@ end
 ```
 
 
-#### Next
+### 3.2 Next
 
 The __next__ keyword can be used to skip over certain steps in the loop. For instance, if we don't want to print out the even numbers, we can write:
 
@@ -133,7 +142,7 @@ for i in 1..10
 end
 ```
 
-#### The .each Iterator
+### 3.3 The .each Iterator
 
 ```Ruby
 array = [1,2,3,4,5,7,8,9,10]
@@ -153,13 +162,13 @@ odds.each { |odd| print odd*4 }
 
 ```
 
-#### The .times Iterator
+### 3.4 The .times Iterator
 
 ```Ruby
 10.times { print "This sentence will be printed 10 times!"}
 ```
 
-#### Loop Operators
+### 3.5 Loop Operators
 ```Ruby
 i = 0
 loop do
@@ -187,7 +196,7 @@ end
 ```
 
 
-### __Booleans Operators__
+### 3.6 __Booleans Operators__
 
  __&&__ - both comparisons on the left and right must evaluate to true for the entire statement to return true.
 
@@ -195,7 +204,7 @@ end
 
 __!__ you reverse the result. If you're false you're now true.
 
-## Classes and Objects
+## 4. Classes and Objects
 
 Class names start with a capital letter and use CamelCase
 To instantiate object from a new class we use __new__ method:
@@ -254,7 +263,7 @@ __Instance variables live in, and are visible everywhere in the object’s scope
 Inspect and p method allow you to look inside of a object.
 Instance variables are private while methods are public by default.
 
-### Accessors and Virtual Attributes
+### 4.1 Accessors and Virtual Attributes
 __Attr_accessor__- creating an instance variable (@name) and a corresponding access method to read it.
 
 ```Ruby
@@ -300,20 +309,20 @@ class Arc
 
 
 
-### Initialization
+### 4.2 Initialization
 
-### Inheritance
+### 4.3 Inheritance
 Inheritance is for reusing functionality, not enforcing interfaces.
 
 
-### Method Visibility
+### 4.5 Method Visibility
 We can use public or private declaration befre method.
 
 ```Ruby
 private_class_method :do_something
 ```
 
-### Raising Exception
+### 4.6 Raising Exception
 Exceptions are raised when something unexpected happens. To raise an exceptions we use __raise method__ from the object class. IIf you use string as argument raise method will raise __RuntimeError__.
 
 ```Ruby
@@ -427,3 +436,4 @@ __Proc objects__ are blocks of code that have been bound to a set of local varia
 - http://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html
 - https://www.safaribooksonline.com/library/view/ruby-cookbook/0596523696/ch08s07.html
 - http://rubylearning.com/satishtalim/ruby_symbols.html
+- https://www.safaribooksonline.com/library/view/learn-to-code/9781788834063/
