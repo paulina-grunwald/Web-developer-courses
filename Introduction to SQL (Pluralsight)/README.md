@@ -11,7 +11,8 @@
 4. Matching Different Data Tables with JOINs
 
 
-## Understanding Syntax
+## Querying Data with the SELECT Statement
+
 __SELECT__ command helps to retrieve one or more rows from one or mor tables.Select table from the database:
 
 ```SQL
@@ -43,14 +44,41 @@ SELECT <COLUMN_NAME>, <COLUMN_NAME> FROM <TABLE_NAME> ;
 
 __*__ - wildcard "SELECT list" character pulls all the columns from a
 
-It's a good practice to always table quality names of your collumns. Some databases will run faster in this way.
-
+It's a good practice to always table quality names of your columns. Some databases will run faster in this way.
+```sql
 SELECT person.first_name, person.last_name FROM person
+```
+
 
 It's possible to alias the database name. For example instead of typing full database name e.g person we can alias it to p.
 
+```sql
+SELECT p.first_name, p.last_name FROM person
+```
+
+What are __unique__ first names of the people in the database?
+```sql
+SELECT DISTINCT p.first_name, p.last_name FROM person
+```
+
+## Filtering Results with the WHERE Clause
+
+Functionalities of __WHERE__:
+- contains the results set,
+- comes after the FROM clause,
+- contains boolean expressions.
+
+```sql
+SELECT p.last_name          /* SELECT CLAUSE */
+FROM person -               /* FROM CLAUSE */
+WHERE p.first_name = 'Jon'; /* WHERE CLAUSE */
+```
 
 
+
+
+The INNER JOIN keyword selects records that have matching values in both tables
 
 # REFERENCES
 - http://files.zeroturnaround.com/pdf/zt_sql_cheat_sheet.pdf
+- https://www.w3schools.com/sql/sql_join_inner.asp
