@@ -11,7 +11,8 @@ BLOCK:
 =end
 
 
-# Iterate over the array and cube each number
+
+##### Iterate over the array and cube each number #####
 num = [1, 4, 6, 7, 8]
 num.each {|num| puts num * num}
 
@@ -45,7 +46,11 @@ food.map {|food|
 puts
 
 
-##### Yield #####
+
+
+
+
+##### Yield ######
 # yield allows you to "inject" that code at some place into a function
 
 def print_func
@@ -60,8 +65,34 @@ print_func{ puts "We are not inside of the BLOCK! Yield was used!"}
 #=>We are back inside the method
 
 
+def is_animal
+  type = yield
+  puts "I am a #{type}"
+end
+
+# DO NOT INCLUDE RETURN STATEMENT!
+is_animal{"dog"}
+is_animal{"cat"}
+is_animal{"parrot"}
+
+
+def multiple_pass
+  puts "Inside the method"
+  yield
+  puts "Back inside the method"
+  yield
+end
+
+result = multiple_pass{ p "I am inside the BLOCK!" }
+puts result
+
+
+
 
 puts
+
+
+
 
 
 
@@ -122,21 +153,147 @@ p ages.map(&is_old)
 puts
 
 
+
+
+
+
 ##### The .block_given? Method ######
+
+# It is used to safegour when no block is attached to the method.
+
+def pass_control_on_condition
+  puts "Inside the method"
+  yield if block_given? #only if the block present the yield will be executed
+    # or yield
+  # end
+  puts "Back inside the method"
+end
+
+pass_control_on_condition{ puts "Inside of the block"}
+#=> Inside the method
+#=> Inside of the block
+#=> Back inside the method
+
+puts
+pass_control_on_condition
+#=> Inside the method
+#=> ack inside the method
+
+
+
+puts
+
+
+
+def speak_the_truth
+  yield "Mark" if block_given?
+end
+
+speak_the_truth { |name| puts "#{name} is nice."}
+speak_the_truth { |name| puts "#{name} is friendly."}
+#=> Mark is nice.
+#=> Mark is friendly.
+
+
+# To have more flexibility we can phrase the code on this way:
+
+puts
+
+
+
+def speak(name)
+  yield name if block_given?
+end
+
+puts speak("Boris") { |name| "#{name} is great!" }
+puts speak("Maria") { |name| "#{name} is beautiful!" }
+#=> Boris is great!
+#=> Maria is beautiful!
+
+puts
+
+
+def num_eval(num1, num2, num3)
+  puts "Inside the method."
+  yield(num1, num2, num3)
+
+end
+
+puts result = num_eval(5,2,13) { |num1, num2, num3| num1 * num2 * num3}
+#=> 130
+
+
+
+puts
+
 
 
 
 #####  A Custom .each Method  #####
 
+#iterate over the array
+def custom_each(array)
+  i = 0
+  while i < array.length
+    yield array[i]
+    i += 1
+  end
+end
+
+names = ["Mark", "Matt", "Paulina"]
+num = [20, 25, 34]
+
+custom_each(names) do |name|
+  puts "The name is #{name} is #{name.length}"
+end
+
+custom_each(num) do |number|
+  puts "The square of #{number} is #{number ** 2}"
+end
+
+
+puts
 
 
 ##### Procs II #####
+# Proc can be passed as an argument to the method.
+# It's also possible when method doesn't include parameter.
+
+def hello
+  puts "I am inside the method"
+  yield
+end
+
+phrase = Proc.new do
+  puts "Inside the proc"
+end
+
+#hello {puts "Hello from the custom block"}
+hello(&phrase)
+#=> I am inside the method
+#=> Inside the proc
+
+
+dog = Proc.new {puts "husky"}
+
+# Use previously created proc in a .times method
+5.times(&dog)
+#=> husky
+#=> husky
+#=> husky
+#=> husky
+#=> husky
+
+
 
 
 #####  Pass a Ruby Method as Proc #####
 
 
 
+
 ##### Intro to Lambdas #####
+
+
 
 ##### Lambda Efficiency Example #####
