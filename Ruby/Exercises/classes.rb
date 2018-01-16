@@ -51,3 +51,20 @@ puts
 - The class that inherits from superclass is called subclass.
 - Every class in RUby (except BasicObject at the top of hierarchu ) has at least one superclass.
 =end
+
+p [1,2,3].class.superclass
+
+
+
+
+##### The .methods Method ######
+
+# Show all available methods on num object
+p 5.methods.sort
+
+puts
+
+fixnum_methods = 5.methods.sort
+float_methods = 3.14.methods.sort
+p fixnum_methods & float_methods
+p fixnum_methods - float_methods
