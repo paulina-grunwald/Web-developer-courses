@@ -47,7 +47,7 @@ Printing commands:
 ### 2.1 Basic and useful methods:
 - __.length__ method in Ruby will return the length of the string (that is, the number of characters—letters, numbers, spaces, and symbols).
 
-  ```Ruby
+```Ruby
 "I love espresso".length
 # ==> 15
 ```
@@ -420,7 +420,7 @@ end
 
 ## Functions
 
-__Referencial transparency__ - A function is said to be referentially transparent if it, given the same input parameters, always produces the same output (return value)
+__Referential transparency__ - A function is said to be referentially transparent if it, given the same input parameters, always produces the same output (return value)
 __Higher order function__ - function that does at least one of the following: takes one or more functions as arguments (i.e., procedural parameters), returns a function as its result.
 
 __Blocks__ are just chunks of code that you can pick up and drop into another method as an input. They're often called "anonymous functions" because they have no name but behave much like functions. They're like little helper functions... you don't find blocks just hanging around without some method (like #each) using them.
