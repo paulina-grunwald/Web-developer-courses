@@ -226,7 +226,7 @@ b = a.clone
 ```
 Clone doesn't create deep copy.
 
-__Instance variables__ in Ruby are dentoed by __@__. its scope is confined to whatever object self refers to.
+__Instance variables__ in Ruby are denoted by __@__. its scope is confined to whatever object self refers to.
 
 ```Ruby
 class Person
@@ -262,6 +262,8 @@ __Instance variables live in, and are visible everywhere in the object’s scope
 
 Inspect and p method allow you to look inside of a object.
 Instance variables are private while methods are public by default.
+
+
 
 ### 4.1 Accessors and Virtual Attributes
 __Attr_accessor__- creating an instance variable (@name) and a corresponding access method to read it.
@@ -310,6 +312,14 @@ class Arc
 
 
 ### 4.2 Initialization
+
+The initialize method is called immediately when an object is instantiated from a class with the new method.
+
+The initialize method offers an opportunity to assign values to instance variables in order to define the object's state.
+
+If the initialize method is not defined in the class, each object is initialized with no state. The object's state can be altered later.
+
+Initialize is not meant to be called.
 
 ### 4.3 Inheritance
 Inheritance is for reusing functionality, not enforcing interfaces.
