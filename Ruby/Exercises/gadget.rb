@@ -6,13 +6,14 @@ class Gadget
     @production_number = "#{("a".."z").to_a.sample}-#{rand(1..999)}"
   end
 
-  def info
-     "Gadget #{@production_number} has a username #{@username}"
+  def to_s
+     "Gadget #{@production_number} has a username #{@username}.
+     It's made from #{self.class} and it has the ID #{self.object_id}"
   end
 end
 
 phone = Gadget.new
 laptop = Gadget.new
 
-puts phone.info
-puts laptop.info
+puts phone.to_s
+puts laptop.to_s
