@@ -16,6 +16,11 @@
 
 It's very easy to create an object in JavaScript and they can be changed after being created.
 
+A JavaScript __object literal__ is a comma-separated list of name-value pairs wrapped in curly braces. Object literals encapsulate data, enclosing it in a tidy package. This minimizes the use of global variables which can cause problems when combining code.
+
+Let's create object literal:
+
+
 ```javascript
 'use strict';
 
@@ -51,8 +56,53 @@ display(cat)
 object literal
 constructor function
 
+#### 1.3 Using ECMAScript 6 Classes to Create JavaScript Objects
+
+We can also add methods to our classes.
+
+```javascript
+class Cat {
+	constructor(name, color) {
+		this.name = name
+		this.color = color
+	}
+
+	speak() {
+		display('Meeeeeeow')
+	}
+}
+
+cat.speak()
+
+```
+
+Summary:
+- Object literals
+- Constructor functions
+- Object.create function
+- ES6 Classes
+
+
+# 2. JavaScript Object Properties
+
+We can look at the property of the object with property.name notation:
+
+```javascript
+'use strict'
+
+var cat = {
+  name: 'Fluffy',
+  color: 'White'
+}
+display(cat.color)
+```
+
+but it's also possible to use bracket notation
+```javascript
+display(cat['color'])
+```
 
 
 
-
-# REFERENCES
+### REFERENCES
+- http://www.dyn-web.com/tutorials/object-literal/
