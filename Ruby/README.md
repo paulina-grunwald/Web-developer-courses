@@ -23,6 +23,7 @@ To create a variable without any value we can write:
 ```Ruby
 variable = nil
 ```
+
 __Nil__ is a special object that signifies no value. If we type __nil.class__ the result will be __NilClass__. To check if the variable is __nil__ we can use __.nil?__ method:
 
 ```Ruby
@@ -49,7 +50,7 @@ Printing commands:
 
 ```Ruby
 "I love espresso".length
-# ==> 15
+#=> 15
 ```
 
 - __.split__ - this method splits the string by selected Operators e.g "1,2,3,4 ".split(",")
@@ -279,7 +280,7 @@ ship = Spaceship.now
 ship.name = "dreadnought"
 puts ship.name
 ```
-It's also possible to provide instances at once but htye need to be separated by commas
+It's also possible to provide instances at once but they need to be separated by commas
 
 
 ```Ruby
@@ -333,7 +334,7 @@ private_class_method :do_something
 ```
 
 ### 4.6 Raising Exception
-Exceptions are raised when something unexpected happens. To raise an exceptions we use __raise method__ from the object class. IIf you use string as argument raise method will raise __RuntimeError__.
+Exceptions are raised when something unexpected happens. To raise an exceptions we use __raise method__ from the object class. If you use string as argument raise method will raise __RuntimeError__.
 
 ```Ruby
 def my_method
@@ -342,9 +343,11 @@ def my_method
   # ....
 end
 ```
+
 If we need more information for the exception it's necessary to write separate exception class.
 
 If we for example would like to store login exceptions we can use rescue method and use empty raise. The exception will be stored in $!:
+
 ```Ruby
 rescue  HatchError => err
   puts $!.message
@@ -353,14 +356,14 @@ end
 ```
 
 ## Standard types
-Ruby doesn't use booleans but but true and false which are instances of TrueClass and FalseClass.
+Ruby doesn't use booleans but  true and false which are instances of TrueClass and FalseClass.
 
 
 Integer numbers:
 - Fixnum (small numbers)
-- Bignum (for very very large numbers and are limited by available memory)
+- Bignum (for very large numbers and are limited by available memory)
 
-If you concatenate Floats with Integers ruby will return float.
+__!__ If you concatenate Floats with Integers ruby will return float.
 
 When we write Ruby code we can specify __endcoding__. The comment about encoding should be placed on the first line or on the 2nd line if we have on the first one /usr/bin/ruby
 
@@ -431,9 +434,11 @@ end
 ## Functions
 
 __Referential transparency__ - A function is said to be referentially transparent if it, given the same input parameters, always produces the same output (return value)
+
 __Higher order function__ - function that does at least one of the following: takes one or more functions as arguments (i.e., procedural parameters), returns a function as its result.
 
 __Blocks__ are just chunks of code that you can pick up and drop into another method as an input. They're often called "anonymous functions" because they have no name but behave much like functions. They're like little helper functions... you don't find blocks just hanging around without some method (like #each) using them.
+
 ```ruby
 [1, 2, 3].each { |num| print "#{num}!"}
 #=> 1! 2! 3!
