@@ -21,6 +21,7 @@ Ruby is an __object-oriented language__, meaning it allows users to manipulate d
 To create a variable without any value we can write:
 
 ```Ruby
+variable = 2
 variable = nil
 ```
 
@@ -59,6 +60,9 @@ Printing commands:
 string you gave it.
 - __.upcase__ and __.downcase__ methods convert a string to ALL UPPER CASE or all lower case, respectively.
 
+- sleep( ) - pauses the program for chosen amount of seconds
+-
+
 - __Comments__
 ```Ruby
 =begin
@@ -66,6 +70,37 @@ this is multi line
 comment
 =end
 ```
+
+### 2.2 Defining Simple Methods
+
+Methods are defined with the def keyword. This is followed by the method name and an optional list of parameter names in parentheses. The Ruby code that constitutes the method body follows the parameter list, and the end of the method is marked with the end keyword.
+
+```Ruby
+def factorial(n)
+  if n < 1                # Test the argument value for validity
+    raise "argument must be > 0"
+  elsif n == 1            # If the argument is 1
+    1                     # then the value of the method invocation is 1
+  else                    # Otherwise, the factorial of n is n times
+    n * factorial(n-1)    # the factorial of n-1
+  end
+end
+
+```
+ __Identifier n__ is used as a variable within the body of the method.
+
+The __return__ keyword is used to force a return prior to the end of the method
+
+
+```ruby
+def multiply(n)
+  raise "error" if n <= 0
+  return 1 if n == 1
+  n * n
+end
+```
+
+We could also use return on the last line of this method body to emphasize that this expression is the method’s return value. In common practice, however, __return is omitted where it is not required__.
 
 ### 2.2 Inner and outer scope
 
@@ -207,7 +242,8 @@ __!__ you reverse the result. If you're false you're now true.
 
 ## 4. Classes and Objects
 
-Class names start with a capital letter and use CamelCase
+Class names start with a capital letter and use CamelCase.
+
 To instantiate object from a new class we use __new__ method:
 
 ```Ruby
@@ -217,6 +253,7 @@ new_variable = ClassName.new
 Variables and objects are not the same thing. Variables are just labels for objects.
 
 To check if of the object:
+
 ```Ruby
 a= "abc"
 a.object_id
@@ -452,3 +489,4 @@ __Proc objects__ are blocks of code that have been bound to a set of local varia
 - https://www.safaribooksonline.com/library/view/ruby-cookbook/0596523696/ch08s07.html
 - http://rubylearning.com/satishtalim/ruby_symbols.html
 - https://www.safaribooksonline.com/library/view/learn-to-code/9781788834063/
+- "The Ruby Programming Language" by David Flanagan, Yukihiro Matsumoto
