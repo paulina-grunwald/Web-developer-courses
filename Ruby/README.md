@@ -35,8 +35,6 @@ variable.nil?
 
 __? mark__ is usually used for the methods that perform true-false check.
 
-__! mark__ is usually used for dangerous or slightly unexpected operations e.g modifying the object in place instead returning modified copy.
-
 Printing commands:
  - __print__ command just takes whatever you give it and prints it to the screen.
 
@@ -45,7 +43,14 @@ Printing commands:
 - __p__ - short version of puts
 
 
+### 2.1 Punctuation in identifiers
+Punctuation characters may appear at the start and end of Ruby identifiers.
 
+$ -  global variable
+@ - instance variable
+? - As a helpful convention, methods that return Boolean values often have names that end with a question mark.
+! - Method names may end with an exclamation point to indicate that they should be used cautiously.
+=
 ### 2.1 Basic and useful methods:
 - __.length__ method in Ruby will return the length of the string (that is, the number of characters—letters, numbers, spaces, and symbols).
 
