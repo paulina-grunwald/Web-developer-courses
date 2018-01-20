@@ -194,13 +194,31 @@ array.each do |x|
 end
 ```
 
-other example
+Another example:
 
 ```Ruby
 odds = [1,3,5,7,9]
 # Add your code below!
 odds.each { |odd| print odd*4 }
 
+```
+
+and one more example using __refactoring__:
+
+```Ruby
+evens = []
+odds = []
+
+num = [1,2,3,4,5,6,7,8]
+
+num.each do |num|
+  num.even? ? evens<<num : odds << numbers
+end
+
+p evens
+#<= [2,4,6,8]
+p odds
+#<= [1,3,5,7]
 ```
 
 ### 3.4 The .times Iterator
