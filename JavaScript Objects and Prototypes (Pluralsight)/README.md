@@ -20,7 +20,6 @@ A JavaScript __object literal__ is a comma-separated list of name-value pairs wr
 
 Let's create object literal:
 
-
 ```javascript
 'use strict';
 
