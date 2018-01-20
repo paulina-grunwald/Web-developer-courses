@@ -70,7 +70,7 @@ Functionalities of __WHERE__:
 
 ```sql
 SELECT p.last_name          /* SELECT CLAUSE */
-FROM person -               /* FROM CLAUSE */
+FROM person                 /* FROM CLAUSE */
 WHERE p.first_name = 'Jon'; /* WHERE CLAUSE */
 ```
 
