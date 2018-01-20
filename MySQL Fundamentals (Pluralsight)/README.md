@@ -77,6 +77,113 @@ ORDER BY first_name, last_name DESC; /*first name will be ordered asc and last_n
   - addition (+)
   - substraction (-)
 
+If the name of the column is long we can __alias__ it.
+
+```SQL
+SELECT replacement cost-rental_rate AS CostDiff,
+  film_id As FilmId,
+  lenght/60 AS TimeinHour
+FROM sakila.film;
+
+```
+
+It's also possible to make aritmetical operations on the column which in the end will give us new insight of the data.
+
+### Select statement and other functions
+Important functions:
+ROUND()
+CEILING()
+FLOOR()
+CONTACT(first_name, ' ', last_name)
+REVERSE()
+DATE_FORMAT()
+GET_FORMAT()
+
+e.g
+
+```SQL
+SELECT amount,
+       ROUND(amount) Amnt, ROUND(amount, 1) Amnt1
+       FLOOR(amount) FloorAmnt, CEILING(amount) CeilingAmnt
+FROM sakila.payment;
+```
+
+Left function in combination with contact helps us to retrieve selected number of letters from a string.
+
+```SQL
+SELECT CONCAT(first_name, ' ', last_name) AS FullName
+       CONCAT(LEFT(first_name,1), LEFT(last_name. 1)) AS FirstInitial
+FROM sakila.actor;
+```
+
+### Introducing WHERE clause
+
+
+```SQL
+SELECT actor_id, first_name, _last_name
+FROM sakila.actor
+WHERE actor_id = 100;
+```
+
+```SQL
+SELECT actor_id, first_name, _last_name
+FROM sakila.actor
+WHERE first_name == 'Nick';
+```
+
+
+### Select statement and Logical Operators
+
+WHERE clause logical Operators:
+
+
+  | Operator       | Description                        |
+  | :------------- | :--------------------------------- |
+  | AND            | True if all conditions are True    |
+  | OR             | True if any one condition is True  |
+  | NOT            | Negate Logic                       |
+
+
+  ```SQL
+  SELECT actor_id, first_name, _last_name
+  FROM sakila.actor
+  WHERE first_name == 'Nick' OR first_name == 'Bob';
+  ```
+
+### Select statement and WHERE clause
+WHERE clause other operators:
+- IN (and NOT IN)
+- BETWEEN (and NOT BETWEEN)
+- LIKE (and NOT LIKE)
+  - Wildcard - %
+  - Wildcard- _
+- NULL Clause (IS NULL and IS NOT NULL)
+
+```SQL
+SELECT *
+FROM sakila.actor
+WHERE first_name IN ('NICK', 'JONNY', 'JOE');
+```
+
+Use of subquery:
+
+```SQL
+SELECT *
+FROM sakila.actor
+WHERE first_name IN ('NICK')
+      OR actor_id IN
+                  (SELECT actor_id)
+                  FROM sakila.actor
+                  WHERE last_name = "DEGENERES");
+```
+
+### Using Like in WHERE clause
+
+```SQL
+
+```
+
+
 
 
 # REFERENCES
