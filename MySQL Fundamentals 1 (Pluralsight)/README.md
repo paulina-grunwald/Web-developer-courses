@@ -178,13 +178,69 @@ WHERE first_name IN ('NICK')
 ```
 
 ### Using Like in WHERE clause
+LIKE operator works with Patterns
+
+Find all the actors whos name starts with A:
 
 ```SQL
+SELECt *
+FROM sakila.actors
+WHERE first_name LIKE '%A';
+```
+Find all the actors who's name starts with AL:
 
+```SQL
+SELECt *
+FROM sakila.actors
+WHERE first_name LIKE '%AL';
 ```
 
+Find all the actor's whos name starts with A and fourth letter is L:
+
+```SQL
+SELECt *
+FROM sakila.actors
+WHERE first_name LIKE 'A__L';
+```
+
+Find the actor's name which starts with A and has E at the end:
+
+```SQL
+SELECt *
+FROM sakila.actors
+WHERE first_name LIKE 'A__E%';
+```
+
+Find the actors names which start with A and also include E:
+
+```SQL
+SELECt *
+FROM sakila.actors
+WHERE first_name LIKE 'A%E';
+```
+
+Find NULL values:
+
+```SQL
+SELECt *
+FROM sakila.addresses
+WHERE address2  IS NULL;
+```
+
+###  ORDER BY clause
 
 
+```SQL
+SELECT *
+FROM sakila.addresess
+ORDER BY distinct;
+```
+
+```SQL
+SELECT
+FROM sakila.address
+ORDER BY distinct DESC;
+```
 
 # REFERENCES
 - http://files.zeroturnaround.com/pdf/zt_sql_cheat_sheet.pdf
