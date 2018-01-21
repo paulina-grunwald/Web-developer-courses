@@ -60,6 +60,7 @@ puts
 
 
 
+
 ##### The For Loop #####
 # The for loop is very similar to each but it does not create local scope for the variables__
 
@@ -81,7 +82,11 @@ This is obviusly unwated behaviour.
 =end
 
 
+
+
 puts
+
+
 
 
 #####  The .each_with_index Method #####
@@ -94,7 +99,11 @@ colors.each_with_index do |color, index|
 end
 
 
+
+
 puts
+
+
 
 
 # Write a loop that iterates over a number array
@@ -126,7 +135,12 @@ end
 puts multiply(array)
 #=> 288
 
+
+
+
 puts
+
+
 
 
 # Prints the product of the element and the index position
@@ -148,7 +162,11 @@ puts print_num(nums)
 #<= "Index is 5 and number is 4"
 
 
+
+
 puts
+
+
 
 
 ##### The .map and .collect Methods on an Array #####
@@ -180,6 +198,11 @@ print cubed(array)
 #<= [1, 9, 16, 36]
 
 
+
+puts
+
+
+
 #####  Iteration over Array with while or until Loops #####
 
 animals = ["lion", "zebra", "elephant", "tiger"]
@@ -192,7 +215,9 @@ while i < animals.length #or until i == animals.length
 end
 
 
+
 puts
+
 
 
 ##### The break Keyword #####
@@ -232,7 +257,12 @@ The square of 7 is 49
 That is not a valid number!
 =end
 
+
+
+
 puts
+
+
 
 
 ##### The next Keyword ######
@@ -298,8 +328,126 @@ p num.concat([5, 3])
 #<= [1, 2, 4, 5, 3]
 
 
-
 ##### The .max and .min Methods on an Array #####
+
+puts [1, 2, 3, 4, 5].max
+#<= 5
+puts [1, 2, 3, 4, 5].min
+#<= 1
+
+
+puts
+
+
 ##### The .include? Predicate Method on an Array #####
+
+# .include? can be true or false depending if the value is found:
+
+p "Hello".include?("l")
+#<= true
+
+nums = [1, 2, 3, 4, 5]
+p numbers.include?(8)
+#<= false
+
+
+puts
+
+
+
 ##### The .index and .find_index Methods on an Array #####
+
+colors = ["Red", "Blue", "Green", "Red"]
+p colors.index("Blue")
+#<= 1 - Blue is on position 1
+
+p colors.index("Red")
+#<= 0 -  Ruby will output only first position of Red from the array
+
+p colors.index("Yellow")
+#<= nil - the value is not found!
+
+
+
+puts
+
+
+
 ##### The .select Method on an Array ##########The .reject Method on an Array ######
+
+grades = [90, 76, 16, 20, 65, 73, 34]
+
+matches = grades.select do |number|
+  number >= 75
+end
+p matches
+#<= [90, 76]
+
+
+# find palindrome
+
+words = ["dog", "level", "dinosaur"]
+
+palindrome = words.select { |word| word == word.reverse }
+p palindrome
+#<= ["level"]
+
+#####  The .reject Method on an Array #####
+
+# Reject is a complementary method with select.
+# The method rejects all the items that evaluate to True
+animal = ["dog", "lion", "cheetah", "cow"]
+puts animal.reject{|animal| animal.include?("o")}
+#<= cheetah
+
+
+puts
+
+
+
+##### Unpack a Multidimensional Array  #####
+
+people = [["Mike", 45, "Male"], ["Bob", 22, "Male"], ["Maria", 34, "Female"]]
+
+p people[0]
+#<= ["Mike", 45, "Male"]
+
+p people[1][2]
+#<= "Male"
+
+# Unpack the people array and assign each inner array to new array
+
+mike, bob, maria = people
+p mike
+#<= ["Mike", 45, "Male"]
+p bob
+#<= ["Bob", 22, "Male"]
+p maria
+#<= ["Maria", 34, "Female"]
+
+
+
+
+puts
+
+
+
+
+#####  The .partition Method on an Array #####
+
+food = ["Steak", "Vegatables", "Steak Burger", "Kale", "Tofu", "Tuna Steaks"]
+
+good = food.select { |food| food.include?("Steak") }
+bad  = food.reject { |food| food.include?("Steak")}
+
+p good
+#<= ["Steak", "Steak Burger", "Tuna Steaks"]
+p bad
+#<= ["Vegatables", "Kale", "Tofu"]
+
+# It's possible to achieve the same result using partition.
+good,bad = food.partition{ |food| food.include?("Steak")}
+p good
+#<= ["Steak", "Steak Burger", "Tuna Steaks"]
+p bad
+#<= ["Vegatables", "Kale", "Tofu"]
