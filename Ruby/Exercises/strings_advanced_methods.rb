@@ -66,10 +66,40 @@ names = ["Max", "Matt", "Adam"]
 p custom_join(names)
 #=> "MaxMattAdam"
 
+
+
+
 puts
 
 
+
+
 ##### The .count Method on a String #####
+# Count method returns the number of occurences of the substring
+
+p "Hello World".count("o")
+#<= 2
+
+p "Hello World".count("lo")
+#<= 5
+
+puts
+
+sentence = "I Love Ruby and Python and Javascipt"
+
+def custom_count(string, search_characters)
+  total_count = 0
+  string.each_char do |string|
+    if string.include?(search_characters)
+      total_count+=1
+  end
+  end
+  return total_count
+end
+
+p custom_count(sentence, "a")
+#<= 4
+
 
 
 ##### The .index and .rindex Methods on a String####
