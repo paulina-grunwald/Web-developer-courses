@@ -77,7 +77,7 @@ ORDER BY first_name, last_name DESC; /*first name will be ordered asc and last_n
   - addition (+)
   - substraction (-)
 
-If the name of the column is long we can __alias__ it.
+If the name of the column is long we can __alias__ it. Using aliases improves readability.
 
 ```SQL
 SELECT replacement cost-rental_rate AS CostDiff,
@@ -241,6 +241,41 @@ SELECT
 FROM sakila.address
 ORDER BY distinct DESC;
 ```
+
+```SQL
+SELECT actor_id, CONCAT(first_name, ' ', last_name) AS FullName
+FROM sakila.actor
+ORDER BY FullName;
+```
+
+### Retrieving limited rows
+
+```SQL
+SELECT *
+FROM sakila.actor
+ORDER BY actor_id;
+```
+
+```SQL
+SELECT *
+FROM sakila.actor
+ORDER BY actor_id
+LIMIT 12;
+```
+
+
+From sakila.actor table extract actor_id from row 26 to 30:
+
+```SQL
+SELECT *
+FROM sakila.actor
+ORDER BY actor_id
+LIMIT 25, 5; /*5 is offset value*/
+```
+
+### Data Modification Techniques
+
+
 
 # REFERENCES
 - http://files.zeroturnaround.com/pdf/zt_sql_cheat_sheet.pdf
