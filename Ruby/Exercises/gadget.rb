@@ -14,7 +14,8 @@ class Gadget
      It's made from #{self.class} and it has the ID #{self.object_id}"
   end
 
-  # Create instance methods - Instance methods have access to all instance variables
+  # Create instance methods
+  # Instance methods have access to all instance variables
   # (and can call other instance variables)
   #Create Getter method
   def username
@@ -39,11 +40,12 @@ end
 
 phone = Gadget.new
 laptop = Gadget.new
-computer = Gadget.new
+
 
 phone.username=("rubyman")
-phone.password=("h-12")
-
-p phone.password
 p phone.username
 p phone.production_number
+
+puts
+puts phone.to_s
+puts laptop.to_s

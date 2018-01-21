@@ -14,19 +14,4 @@ ship = Spaceship.new
 # Set destination
 ship.destination = "Earth"
 # Get destination
-#p ship.destination
-
-odd = []
-even = []
-num = [1,2,4,5,6,7]
-num.each do |num|
-  if num.odd?
-    odd<<num
-  else
-    even<<num
-  end
-end
-
-puts odd
-puts
-puts even
+p ship.destination
