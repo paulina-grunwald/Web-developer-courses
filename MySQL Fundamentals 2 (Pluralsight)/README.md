@@ -3,12 +3,12 @@
 >Witten by Paulina Grunwald
 
 
-### Content table:
+## Content table:
 
 1. Joins, Unions and Subqueries
 2. MySQL Functions
 3. MySQL Views
-4. Stored Procedures and Stored Functionsh
+4. Stored Procedures and Stored Functions
 5. Triggers and Events
 6. Summary and Resources
 
@@ -54,7 +54,33 @@ INNER JOIN Table2 t2 ON t1.ID = t2.ID
 - LEFT OUTER join returns all the rows from the left table with the matching rows from the right table.
 - If there are no columns matching the right table, it returns NULL values.
 
-<img src="http://stevestedman.com/wp-content/uploads/LeftOuterJoinVenn.png" width="40%" height="40%">
+<img src="http://stevestedman.com/wp-content/uploads/LeftOuterJoinVenn.png" width="50%" height="50%">
+
+
+```SQL
+SELECT t1.ID AS T1ID, t1.Value AS T1value
+      t2.ID T2ID, t2.Value AS T2Value
+FROM Table t1 /*from clause*/
+LEFT OUTER JOIN Table2 t2 ON t1.ID = t2.ID
+```
+
+
+### 1.13 Right Outer Join
+
+<img src="http://www.dofactory.com/Images/sql-right-join.png" width="50%" height="50%">
+
+Right Outer join returns all the values from table 2 and matching results from table 1. If there are no matching results in table 1 those rows will be marked as NULL.
+
+```SQL
+SELECT t1.ID AS T1ID, t1.Value AS T1value
+      t2.ID T2ID, t2.Value AS T2Value
+FROM Table t1 /*from clause*/
+LEFT OUTER JOIN Table2 t2 ON t1.ID = t2.ID
+```
+
+### 1.14 Full Outer Join
+
+### 1.15 Cross Join
 
 # 2. MySQL Functions
 # 3. MySQL Views
@@ -66,6 +92,7 @@ INNER JOIN Table2 t2 ON t1.ID = t2.ID
 # REFERENCES
 - http://files.zeroturnaround.com/pdf/zt_sql_cheat_sheet.pdf
 - https://www.w3schools.com/sql/sql_join_inner.asp
-
+- https://gist.github.com/uupaa/f77d2bcf4dc7a294d109
 # IMAGES:
 - http://stevestedman.com/wp-content/uploads/LeftOuterJoinVenn.png
+- http://www.dofactory.com/Images/sql-right-join.png
