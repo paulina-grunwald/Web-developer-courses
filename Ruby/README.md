@@ -18,6 +18,37 @@ If you are stuck with your code you can always visit __[rubydoc.info](http://www
 
 Ruby is an __object-oriented language__, meaning it allows users to manipulate data structures called objects in order to build and execute programs. We'll learn more about objects later, but for now, all you need to know is everything in Ruby is an object.
 
+
+#### Variables and objects
+- All Ruby objects live on the heap, an area of the computer memory that is allocated.
+- Ruby creates space for each object on the heap.
+- An object returns a reference to its memory address when it's created.  
+- Variable do not hold the object but rather reference to it.
+- We can say that if the object is the house the variable is the address.
+
+```Ruby
+a = [1, 5, 6, 3]
+puts a.object_id
+#<= 39093360
+
+# a and b are pointing to the same object in memory
+b = a
+p a.object_id == b.object_id__
+#<= true
+
+# c is duplicate of a so it's different object than a
+c = a.dup
+p a.object_id == c.object_id
+#<= false
+```
+
+There are 4 types of variables used in Ruby:
+
+- ``class variables`` start with @@, e.g. @@my_var
+- ```instance variables``` start with @, e.g. @my_var
+- ```global variables``` start with $, e.g. $my_var
+- ```local variables``` start with _, e.g. _my_var
+
 To create a variable without any value we can write:
 
 ```Ruby
