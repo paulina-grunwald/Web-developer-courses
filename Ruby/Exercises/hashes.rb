@@ -63,3 +63,28 @@ p candy.fetch(:chocolate)
 #=>3
 p candy.fetch(:lolipop, 9.99 )
 #=>9.99
+
+
+
+
+# Write a function that sorts the keys in a hash by the length
+#of the key as a string. For instance, the hash:
+
+hash = { abc: 'hello', 'another_key' => 123, 4567 => 'third' }
+
+p hash.keys.map(&:to_s).sort_by(&:length)
+# or
+p hash.keys.collect(&:to_s).sort_by { |key| key.length }
+#<= ["abc", "4567", "another_key"]
+
+
+# Use .collect on arrays and hash
+animals = ["dog", "cat", "horse", "pig"]
+p animals.collect
+#<= #<Enumerator: ["dog", "cat", "horse", "pig"]:collect>
+
+random_hash = { "name" => "Paulina",
+                "age" => "30",
+                "sex" => "female"}
+p random_hash.collect
+#<= #<Enumerator: {"name"=>"Paulina", "age"=>"30", "sex"=>"female"}:collect>
