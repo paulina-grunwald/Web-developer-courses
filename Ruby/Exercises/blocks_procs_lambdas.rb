@@ -64,10 +64,24 @@ print_func{ puts "We are not inside of the BLOCK! Yield was used!"}
 #=>We are not inside of the BLOCK! Yield was used!
 #=>We are back inside the method
 
+def animals
+  puts "I love animals"
+  yield
+  puts "and also cats"
+end
+
+p animals {puts "but I also like birds"}
+#<= I love animals
+#<= but I also like birds
+#<= and also cats
+
+puts
+
+
 
 def is_animal
-  type = yield
-  puts "I am a #{type}"
+  animal_type = yield
+  puts "I am a #{animal_type}"
 end
 
 # DO NOT INCLUDE RETURN STATEMENT!
@@ -76,6 +90,7 @@ is_animal{"cat"}
 is_animal{"parrot"}
 
 
+# Use multiple yields in a method
 def multiple_pass
   puts "Inside the method"
   yield
