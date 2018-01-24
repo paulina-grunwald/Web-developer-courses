@@ -32,7 +32,7 @@ A SQL ```JOIN``` combines columns from tqo or more tables in a single result. Th
 ### 1.11 Inner JOIN
 - Inner join returns rows when there is at least one match in both pf the tables.
 - Avoid ambiguity by qualifying each column name with table name.
-- Join table based on relationship as well ad-hoc.
+- Join table based on relationship as well ad-hoc (primary and foregin key relation)
 
 There are two types of Inner Join syntaxes: Implicit and Explicit.
 
@@ -80,10 +80,47 @@ LEFT OUTER JOIN Table2 t2 ON t1.ID = t2.ID
 
 ### 1.14 Full Outer Join
 
+Full Outer join combines left outer join and right outer join. It join returns rows from either table when the conditions are met and null where there is no match.
+
 ### 1.15 Cross Join
 
+CROSS join is a Cartesian join that does not necessitate any condition to join. The result set contain record that are multiplies of the record number of both tables.
+
+
+Create view from sakila table:
+
+```SQL
+SELECT *
+FROM sakila.actor;
+
+/*create view that will select all entries
+from sakila.actor table*/
+CREATE VIEW vw_AllActor
+AS
+SELECT *
+FROM sakila.actor;
+```
+
+Other example:
+
+```SQL
+CREATE VIEW vw_AllActor
+AS
+SELECT *
+FROM sakila.actor
+WHERE first_name LIKE '%A';
+```
+
 # 2. MySQL Functions
+
+A view is commonly known as a virtual tabled and it's based on the result set of the SQL statement. A view consists of a SELECT statement that is stored as an object in the database. The tables referenced in View must be present in the table. Views do not store any data but retrieve data while running the query.
+
+
 # 3. MySQL Views
+
+
+
+
 # 4. Stored Procedures and Stored Functions
 # 5. Triggers and Events
 # 6. Summary and Resources
