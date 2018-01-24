@@ -151,30 +151,161 @@ p shopping_list2.empty?
 
 
 
-
 puts
+
+
 
 
 #####  The .each Method on a Hash #####
 
+capitals = {Hungary: "Budapest", Poland: "Warsaw"}
+
+capitals.each do |state, capital|
+  puts "Quering hash.."
+  puts "Capital of #{state} is #{capital}"
+end
+=begin
+Quering hash..
+Capital of Hungary is Budapest
+Quering hash..
+Capital of Poland is Warsaw
+=end
+
+
+capitals.each do |guess|
+  p guess[0] # output keys
+  p guess[1] # output values
+end
+#<= :Hungary
+#<= "Budapest"
+#<= :Poland
+#<= "Warsaw"
+
+
+puts
 
 
 
+##### The .each_key and .each_value Methods #####
+ ages = {Maria: 23, Mark: 76, Paul: 24, John: 18}
+
+# Iterate over the keys of the hash age
+ ages.each_key do |age|
+   puts "Ages for various people are"
+   puts "#{age}"
+end
+
+=begin
+Ages for various people are
+Maria
+Ages for various people are
+Mark
+Ages for various people are
+Paul
+Ages for various people are
+John
+
+=end
+
+puts
+
+# Iterate over all values of the hash age
+
+ages.each_value {|age| puts "Age is #{age}"}
+#<= Age is 23
+#<= Age is 76
+#<= Age is 24
+#<= Age is 18
+
+
+puts
+
+
+# Write a function which returns keys and values
+# and saves them to an array
+
+def get_keys(hash)
+  keys = []
+  values = []
+  hash.each do |k, v|
+    keys << k
+    values << values
+  end
+  keys
+
+end
+
+
+p get_keys(ages)
+
+
+puts
+
+
+#####  Retrieve Keys or Values from Hash as an Array #####
+
+basket = {bananas: 3, oranges: 3, apples: 2}
+
+# Extract keys
+p basket.keys
+# Extract values
+p basket.values
+# Extract unique values using method .uniq
+p basket.values.uniq
 
 
 
+puts
 
 
 
-puts 
+#####  Create Hash with Default Value #####
+
+vegs = Hash.new("Not Found")
+
+p vegs[:cucumber]
+#<= Not Found
+
+vegs.default = "Wooops! not found"
+p vegs[:tomato]
+#<="Wooops! not found"
 
 
 
+puts
 
-#####  The .each_key and .each_value Methods ######
 
-# Write a function that sorts the keys in a hash by the length
-#of the key as a string. For instance, the hash:
+
+#####  Convert Hash to Array and Vice Versa ######
+
+fruits = {apple: "red", orange: "orange", potatoes: "brown"}
+
+p fruits.to_a
+#<= [[:apple, "red"], [:orange, "orange"], [:potatoes, "brown"]]
+
+
+
+#####  The .sort and .sort_by Methods on a Hash ######
+
+######  The .key? And .value? Methods on a Hash #######
+
+
+######  Hashes as Method Arguments  ######
+
+######  The .delete Method on a Hash ######
+
+######  The .select and .reject Methods on a Hash #####
+
+######  The .merge Method to Combine Hashes  ######
+
+
+######  Word Frequency in a Sentence String ######
+
+
+
+##### Write a function that sorts the keys in a hash by the length
+#of the key as a string. For instance, the hash: ######
+
 
 hash = { abc: 'hello', 'another_key' => 123, 4567 => 'third' }
 
