@@ -276,32 +276,176 @@ puts
 
 
 
+
 #####  Convert Hash to Array and Vice Versa ######
 
 fruits = {apple: "red", orange: "orange", potatoes: "brown"}
 
+# Transform hash to arrays
 p fruits.to_a
 #<= [[:apple, "red"], [:orange, "orange"], [:potatoes, "brown"]]
+
+# Change array to hashe
+
+cities = [[:Warsaw, "Poland"], [:Bucharest, "Romania"]]
+
+p cities.to_h
+#<= {:Warsaw=>"Poland", :Bucharest=>"Romania"}
+
+
+
+puts
+
 
 
 
 #####  The .sort and .sort_by Methods on a Hash ######
 
+fruit_color = {apple: "red", orange: "orange", lemon: "yellow"}
+
+# Sort by keys
+p fruit_color.sort.reverse
+#<= [[:orange, "orange"], [:lemon, "yellow"], [:apple, "red"]]
+
+
+# Sort by values using .sort_by
+p fruit_color.sort_by {|fruit,color| fruit}
+#<= [[:apple, "red"], [:lemon, "yellow"], [:orange, "orange"]]
+
+p fruit_color.sort_by {|fruit,color| color}
+#<= [[:orange, "orange"], [:apple, "red"], [:lemon, "yellow"]]
+
+
+
+
+puts
+
+
+
+
 ######  The .key? And .value? Methods on a Hash #######
+ cars = {toyota: "camry", chevrolet: "aveo", ford: "F"}
+
+ puts cars.key?(:ford)
+ #<= True
+ puts cars.value?("F")
+#<= True
+
+puts cars.key?(:tesla)
+#<= false
+
+puts cars.has_value?("camry")
+#<= true
+
+
+
+puts
+
+
 
 
 ######  Hashes as Method Arguments  ######
 
+
+def calc(price, tip, tax)
+  tax_amount = price * tax
+  tip_amount = price * tip
+  price + tip_amount + tax_amount
+end
+
+puts calc(60, 0.18, 0.08)
+#<= 75.6
+
+p calc(0.18, 0.08, 60)
+#<= 10.994399999999999
+
+
+def calc_2(info)
+  tax_amount = info[:price] * info[:tax]
+  tip_amount = info[:price] * info[:tip]
+  info[:price] + tax_amount + tip_amount
+end
+
+bill = {tip: 0.18, tax: 0.09, price: 25.75}
+
+p calc_2(bill)
+#<= 32.7025
+
+
+
+
+
+puts
+
+
+
+
+
+
 ######  The .delete Method on a Hash ######
+superheroes = {spiderman: "Peter Parker", superman:"Clark Kent"}
+
+# Key will be deleted but value will be stored
+p removed = superheroes.delete(:spiderman)
+#<= "Peter Parker"
+
+
+
+
+puts
+
+
+
 
 ######  The .select and .reject Methods on a Hash #####
 
+recipie = {sugar: 7, flour: 10, salt: 1, peper: 0.5}
+
+high = recipie.select {|item,amount| amount >= 5}
+p high
+#<= {:sugar=>7, :flour=>10}
+
+
+
+puts
+
+
+
 ######  The .merge Method to Combine Hashes  ######
+# merge is temporary operations
+# .merge merges two hashes
+
+shop = {garlic: "2 cloves", tomatoes: 5, milk: "10 gallons"}
+kitchen = {bread: "2 loaves", yoghurt: "20 cans", milk: "100 gallons"}
+
+p shop.merge(kitchen)
+#<= {:garlic=>"2 cloves", :tomatoes=>5, :milk=>"100 gallons", :bread=>"2 loaves", :yoghurt=>"20 cans"}
+
+# kitchen.merge(market)
+
+
+
+
+puts
+
+
 
 
 ######  Word Frequency in a Sentence String ######
 
+sentence = "Once upon a time in a land far away"
 
+def word_count(string)
+  # Return a hash where the keys will represent
+  # the words in the string
+
+
+
+
+
+
+
+puts
 
 ##### Write a function that sorts the keys in a hash by the length
 #of the key as a string. For instance, the hash: ######
