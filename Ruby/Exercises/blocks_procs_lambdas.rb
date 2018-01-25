@@ -98,6 +98,7 @@ def multiple_pass
   yield
 end
 
+
 result = multiple_pass{ p "I am inside the BLOCK!" }
 puts result
 
@@ -300,9 +301,58 @@ dog = Proc.new {puts "husky"}
 #=> husky
 
 
+puts
 
 
 #####  Pass a Ruby Method as Proc #####
+p ["1", "2", "3", "4"].map {|num|num.to_i}
+#<= [1, 2, 3, 4]
+p ["1", "2", "3", "4"].map(&:to_i)
+#<= [1, 2, 3, 4]
+
+array = [4, 5, 6]
+p array.map(&:to_s)
+#<= ["4", "5", "6"]
+
+p [1, 2, 3, 4, 5].select {|number| number.even?}
+#<= [2, 4]
+
+p [4, 5, 6].select(&:even?)
+#<= [4, 6]
+p [4, 5, 6].select(&:odd?)
+#<= [5]
+
+p [4, 7, 6, 9, 1].reject(&:odd?)
+# [4, 7, 6, 9, 1].reject {|num| number.odd?}
+#<= [4, 6]
+
+
+puts
+
+
+
+###### Methods with Proc Parameters #####
+
+def talk_about(name, &myprc)
+  puts "Let me tell you about #{name}."
+  myprc.call(name)
+end
+
+good_things = Proc.new do |name|
+  puts "#{name} is a genius"
+end
+
+bad_things = Proc.new do |name|
+  puts "#{name} is stupid."
+end
+
+p talk_about("Mark", &good_things)
+#<= Let me tell you about Mark.
+#<= Mark is a genius
+
+
+
+puts
 
 
 
@@ -310,5 +360,8 @@ dog = Proc.new {puts "husky"}
 ##### Intro to Lambdas #####
 
 
+
+
+puts
 
 ##### Lambda Efficiency Example #####
