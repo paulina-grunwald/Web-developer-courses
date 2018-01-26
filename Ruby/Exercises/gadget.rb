@@ -32,7 +32,7 @@ class Gadget
 =end
 
 
-  def initialize
+  def initialize(username, password)
     # Create instance variables
     @username = "User #{rand(1..100)}"
     @password = "topsecret"
@@ -52,13 +52,15 @@ class Gadget
 
 end
 
-phone = Gadget.new # Instance of Gadget Class
-laptop = Gadget.new # Instance of Gadget Class
 
-p phone.username
-#<= "User 95"
-p phone.production_number
-#<= "z-604"
-phone.username = "Paulina"
-p phone.username
-#<= "Paulina"
+g1 = Gadget.new("PaulinaRuby", "bestpass")
+p g1.username
+p g1.production_number
+# Change password for g1
+p g1.password = "newpass"
+
+
+g2 = Gadget.new("Coder", "secretpass4")
+g2.username = "RubyCoder"
+p g2.username
+#<= RubyCoder
