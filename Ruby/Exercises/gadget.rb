@@ -1,6 +1,37 @@
 # Create new class
 class Gadget
   # Create initialize function
+  attr_accessor :username
+  attr_reader :production_number
+  attr_writer :password
+
+
+=begin
+# Above written code is equivalent of this code
+  def username
+    @username
+  end
+
+ def username=(new_username)
+    @username = new_username
+  end
+
+  # Create Getter method
+  def production_number
+    @production_number
+  end
+
+  # Create Setter method
+  def password=(new_password)
+    @password = new_password
+  end
+
+  def username=(new_username)
+    @username = new_username
+  end
+=end
+
+
   def initialize
     # Create instance variables
     @username = "User #{rand(1..100)}"
@@ -18,34 +49,16 @@ class Gadget
   # Instance methods have access to all instance variables
   # (and can call other instance variables)
   #Create Getter method
-  def username
-    @username
-  end
-
-  # Create Getter method
-  def production_number
-    @production_number
-  end
-
-  # Create Setter method
-  def password=(new_password)
-    @password = new_password
-  end
-
-  def username=(new_username)
-    @username = new_username
-  end
 
 end
 
-phone = Gadget.new
-laptop = Gadget.new
+phone = Gadget.new # Instance of Gadget Class
+laptop = Gadget.new # Instance of Gadget Class
 
-
-phone.username=("rubyman")
 p phone.username
+#<= "User 95"
 p phone.production_number
-
-puts
-puts phone.to_s
-puts laptop.to_s
+#<= "z-604"
+phone.username = "Paulina"
+p phone.username
+#<= "Paulina"
