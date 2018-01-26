@@ -358,10 +358,62 @@ puts
 
 
 ##### Intro to Lambdas #####
+# Lambdas are very similars to Procs. They both are blocks.
+
+square_lambda = lambda {|number| number ** 2 }
+square_proc = Proc.new {|number| number ** 2 }
+
+p [1, 2, 3].map(&square_proc)
+#<= [1, 4, 9]
+p square_proc.call(5)
+#<= 25
+
+p [1, 2, 3].map(&square_lambda)
+
+
+
+# Main difference between lambda and proc is that lambda must received
+# Required number of arguments otherwise it will throw error
+
+person = Proc.new { |name, age| "Your name is #{name} and age #{age}"}
+p person.call("Mike", 22)
+
+
+person_lambda = lambda { |name, age| "Your name is #{name} and age #{age}"}
+
+
+puts
+
+def diet
+  status = lambda {return "You gave in"}
+  status.call
+  "You completed the diet!"
+end
+
+result = diet
+p diet
+
 
 
 
 
 puts
 
+
+
+
 ##### Lambda Efficiency Example #####
+
+# Create conversion to euro  from dollars lambda
+to_euros = lambda {|dollars| dollars * 0.95}
+
+# Create conversion function
+def convert(dollars, currency_lambda)
+  currency_lambda.call(dollars) if dollars.is_a?(Numeric)
+end
+
+p convert(1000, to_euros)
+#<= 950
+
+p [300, 200]. map(&to_euro)
+#<= [285.0, 190.0]
