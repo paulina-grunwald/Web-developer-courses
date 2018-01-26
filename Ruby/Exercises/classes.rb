@@ -36,8 +36,10 @@ puts lambda {}.class
 puts Time.now.class
 #=> Time
 
-puts
 
+
+
+puts
 
 
 #####  The .superclass and .ancestors Methods on a Class #####
@@ -52,8 +54,14 @@ puts
 - Every class in RUby (except BasicObject at the top of hierarchu ) has at least one superclass.
 =end
 
+p  5.class.superclass
+#<= Numeric
 p [1,2,3].class.superclass
+#<= Object
 
+
+
+puts
 
 
 
