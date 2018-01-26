@@ -369,6 +369,7 @@ p square_proc.call(5)
 #<= 25
 
 p [1, 2, 3].map(&square_lambda)
+p square_lambda.call(5)
 
 
 
