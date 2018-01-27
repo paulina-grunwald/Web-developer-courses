@@ -154,6 +154,7 @@ if(money >= price) {
 ```
 __Else if statement example__
 
+
 ```javascript
 var weather = "sunny";
 
@@ -178,6 +179,7 @@ if (number%2 === 0) {console.log("even");
 
 }
 ```
+
 
 __Logical Operators__
 1. value1 __&&__ value2 - Logical AND - returns true if both value1 and vale 2 evaluate to true.
