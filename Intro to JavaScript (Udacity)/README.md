@@ -70,6 +70,7 @@ You can also change the start of the greeting by __reassigning__ the variable gr
 ```javascript
 greeting = "Hola";
 greeting + " World!";
+console.log(greeting);
 ```
 
 It's recommended to use __camelCase__ wen creating names of variables in javascript.
@@ -89,8 +90,9 @@ var name = "James";
 name[0];
 //Returns: "J"
 ```
-__Quotes within strings__ - If you want to use quotes inside a string, and have JavaScript not misunderstand your intentions, you’ll need a different way to write quotes. Thankfully, JavaScript has a way to do this using the backslash character ( __\__ ). e.g
-```code
+__Quotes within strings__ - If you want to use quotes inside a string, and have JavaScript not misunderstand your intentions, you’ll need a different way to write quotes. Thankfully, JavaScript has a way to do this using the ````backslash character ( __\__ )````. e.g
+
+```JavaScript
 console.log("The man whispered, \"please speak to me.\"")
 ```
 
@@ -107,6 +109,7 @@ Code     Character
 __Null, Undefined, and NaN__
 
 __null__ - data type that has no value
+
 ```javascript
 var x = null;
 ```
@@ -136,6 +139,7 @@ Data types:
 
 JavaScript is a loosely typed or dynamic language, meaning you don't need to declare a variable's type ahead of time and the language autmatically determines a variable's type while the program is being processed.
 
+
 ## Conditionals
 
 ```javascript
@@ -145,7 +149,7 @@ var money = 20.00;
 if(money >= price) {
   console.log("buy the hammer");
 } else {
-  console.console.log("don't buy hammer");
+  console.log("don't buy hammer");
 }
 ```
 __Else if statement example__
@@ -223,3 +227,4 @@ if (((flavor === "vanilla")|| (flavor=== "chocolate"))
 # REFERENCES
 - [JavaScript style guide](https://github.com/udacity/frontend-nanodegree-styleguide)
 - https://www.hackerrank.com/challenges/js10-data-types/topics
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Using_special_characters_in_strings
