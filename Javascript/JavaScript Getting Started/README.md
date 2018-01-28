@@ -3,6 +3,9 @@
 
 Creating Blackjack game was am assigment of [Pluralsight JavaScript: Getting Started course.](https://app.pluralsight.com/library/courses/javascript-getting-started/table-of-contents)
 
+The game can be viewed using this [link]().
+
+
 ### Stages of game creation
 
 1. Create two array - suits and values. Suits array will include 5 suits of cards:
@@ -43,7 +46,58 @@ let playerCards = [deck[0], deck[2]];
 
 ```
 
-3. Add functions to the game
+3. Add createDeck function
 
+We will add previously created for loops and add them to the createDeck() function.
 
-3.
+```javascript
+function createDeck(){
+  // Create empty array for the deck
+  let deck = [];
+  for(let suitIdx = 0; suitIdx < suits.length; suitIdx++){
+  // Loop through the values
+    for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
+      deck.push(values[valueIdx] + ' of ' + suits[suitIdx]);
+    }
+  }
+  // Return cards in the deck
+  return deck;
+}
+```
+
+4. Create function getNextCard()
+
+```javascript
+function getNextCard(){
+  return deck.shift
+}
+```
+
+###### <em>Side Note - .shift() method</em>
+
+The ```shift()``` method removes the first element from an array and returns that removed element. This method changes the length of the array.
+e.g
+
+```javascript
+var array1 = [1, 2, 3];
+
+var firstElement = array1.shift();
+
+console.log(array1);
+// expected output: Array [2, 3]
+
+console.log(firstElement);
+// expected output: 1
+```
+
+5. Change items in the playerCards
+Now we will change array items in the playerCards. 
+
+```javascript
+
+let playerCards = [getNextCard, getNextCard];
+```
+
+# REFERENCES:
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
