@@ -18,3 +18,20 @@ let textArea = document.getElementById('text-area'),
 
 
 
+//Create deck function
+function createDeck() {
+  let deck = [];
+  // Loop through the suits
+  for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
+    // Loop through the values
+    for (let valueIdx = 0; valueIdx < values.length; valueIdx++){
+      let card = {
+        suit: suit[suitIdx],
+        value: values[valueIdx]
+      };
+      deck.push(card);
+    }
+  }
+  // Return cards from the deck
+  return deck;
+}
