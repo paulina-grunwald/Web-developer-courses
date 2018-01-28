@@ -75,3 +75,59 @@ puts Rectangle.area(5,6)
 
 puts Circle.area(3)
 #<= 28.269
+
+
+
+puts
+
+
+
+#####  Math module #####
+puts Math::PI
+#<= 3.141592653589793
+puts Math.sqrt(14)
+#<= 3.7416573867739413
+
+
+
+puts
+
+
+
+##### MIXIN #######
+
+# Different classes need similar funcionalities
+# For example String and Numeric both need <, <=, >= and ==
+# Neither class can be represented as subclass of the other.
+# Duplication of methods across violates the DRY principle
+
+class OlympicMedal
+  # <, <=, >=, <=>, .between?
+  include Comparable
+
+  MEDAL_VALUES = {"Gold" => 3, "Silver" => 2, "Bronze" => 1}
+  attr_reader :type
+
+  def initialize(type, weight)
+    @type = type
+    @weight = weight
+  end
+
+  def <=>(other)
+    if MEDAL_VALUES[type] < MEDAL_VALUES[other.type]
+      -1
+    elsif MEDAL_VALUES[type] == MEDAL_VALUES[other.type]
+      0
+    else
+      1
+    end
+  end
+end
+
+  bronze = OlympicMedal.new("Bronze", 5)
+  silver = OlympicMedal.new("Silver", 10)
+  gold = OlympicMedal.new("Gold", 3)
+
+  puts bronze > silver
+  #<= false
+  
