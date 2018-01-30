@@ -91,12 +91,97 @@ console.log(firstElement);
 ```
 
 5. Change items in the playerCards
-Now we will change array items in the playerCards. 
+Now we will change array items in the playerCards.
 
 ```javascript
 
 let playerCards = [getNextCard, getNextCard];
 ```
+
+4. Add objects to the game
+Instead storing the card name as a long string we have save it as an object.
+
+```javascript
+let card = {
+  suit: suits[suitIdx],
+  values: values[valueIdx]
+};
+```
+Now instead of our deck to be collection of long string it's an array of objects that have suit and value.
+
+
+
+6. Create function getCardString
+
+```javascript
+function getCardString(card) {
+  return card.value
+}
+
+```
+
+
+7. Linking script.js with the index.html
+
+__DOM__ - Document Object Model: defines how the data of the web page is organized and manipulated.
+
+Create index.html file with custom text and few buttons. Link script.js file with index.html.
+
+#### Side Note
+In Html we would create a paragraph:
+
+```html
+<p id="text-area">Custom text</p>
+```
+In order to access this paragraph in javascript we need to create new variable in which we use special object on which we use .getElementById. In .getEelementById function we pass a name of the object we want to retrieve.
+
+
+```javascript
+let paragraph = document.getElement('text-area')
+// Execute variable
+paragraph.innerText = "This is paragraph";
+
+paragraph.style.display = 'none'; //remove it
+paragraph.style.display = 'block'; //add it back
+```
+
+
+Now we need to add buttons to the index.html file:
+
+```Html
+<button id="new-game-button">New Game</button>
+<button id="hit-button">Hit</button>
+<button id="stay-button">Stay</button>
+```
+and add DOM variables to the script.js:
+
+```javascript
+// DOM variables
+let textArea = document.getElementById('text-area'),
+    newGameButton = document.getElementById('new-game-button'),
+    hitButton = document.getElementById('hit-button'),
+    stayButton = document.getElementById('stay-button');
+
+```
+
+8.
+
+
+10. Shuffle deck of Cards
+
+```javascript
+function shuffleDeck(deck){
+  for (let i = 0; i < deck.length; i++){
+    // Calc index of the card we want to swap
+    let swapIdx = Math.strunc(Math.random() * deck.length);
+    let tmp = deck[swapIdx]
+    deck[swapIdx] = deck[i]
+    deck[i] = temp;
+  }
+}
+
+```
+
 
 # REFERENCES:
 
