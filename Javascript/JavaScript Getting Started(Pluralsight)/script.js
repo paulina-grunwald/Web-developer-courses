@@ -19,14 +19,14 @@ let textArea = document.getElementById('text-area'),
 
 // Game variables (at the start of the game)
 let gameStarted = false,
-    gameOver = false, 
+    gameOver = false,
     playerWon = false,
     dealerCards = [],
     playerCards = [],
     dealerScore = 0,
     playerScore = 0,
     desck = [];
-    
+
 
 // Hide hitButton and stayButton (this button needs to be hidden before the game is started)
 hitButton.style.display = 'none';
@@ -35,28 +35,27 @@ stayButton.style.display = 'none';
 //Show current status
 showStatus();
 
-// Set up handler for starting new game.   
+// Set up handler for starting new game.
 // When user clicks on new game the game will be started
 newGameButton.addEventListener('click', function(){
   //Update game variables
   gameStarted = true;
   gameOver = false;
   playerWon = false;
-
   // Create new deck of cards
   deck = createDeck();
   shuffleDeck(deck);
-
   // Give two cards for dealer and player
   dealerCards = [ getNextCard(), getNextCard() ];
   playerCards = [ getNextCard(), getNextCard() ];
-
   textArea.innerText = 'Started...';
   newGameButton.style.display = 'none'
   hitButton.style.display = 'inline';
   stayButton.style.display = 'inline';
   showStatus();
 });
+
+
 
 // Create deck function
 function createDeck() {
@@ -92,6 +91,54 @@ function getCardString(card) {
   return card.value + ' of ' + card.suit;
 }
 
+function getCardNumericValue(card) {
+  switch(card.value) {
+    case 'Ace':
+      return 1;
+    case 'Two':
+      return 2;
+    case 'Three':
+      return 3;
+    case 'Four':
+      return 4;
+    case 'Five':
+      return 5;
+    case 'Six':
+      return 6;
+    case 'Seven':
+      return 7;
+    case 'Eight':
+      return 8;
+    case 'Nine':
+      return 9;
+    default:
+      return 10;
+  }
+}
+
+function getScore(cardArray){
+  let score = 0;
+  lethasAce = false;
+  for (let i =0; i < cardArray.length; i++) {
+    let card = cardArray[i];
+    score+= getCardNumericValue(card);
+    if (card.value = 'Ace') {
+      hasAce = true;
+    }
+  }
+  if (hasAce && score + 10 <= 21) {
+    return score + 10;
+  }
+  return score;
+}
+
+
+
+function updateScores() {
+  dealerScore = getScore(dealerCards);
+  playerScore = getScore(playerCards);
+}
+
 
 // Show status
 function showStatus() {
@@ -115,8 +162,24 @@ function showStatus() {
   }
 
   updateScores();
-  textArea.innerText = 
-
+  textArea.innerText =
+    'Dealer has:\n' +
+    dealerCardString +
+    '(score:)' + dealerScore + ')\n\n'; +
+    'Player has\n' +
+    playerCardString +
+    '(score:' + playerScore + ')\n\n';
+  if (gameOver) {
+    if(playerWon) {
+      text.Area.innerText += "You Win!";
+    }
+    else {
+      textArea.innerText += "Dealer wins!";
+    }
+    newGameButton.style.display = 'inline';
+    hitButton.style.display = 'none';
+    stayButton.style.display = 'none'
+  }
 
 // Get next card from the deck
 function getNextCard() {
@@ -128,15 +191,10 @@ function getNextCard() {
 // Create deck
 let deck = createDeck();
 
-// Assign first two cards to the player 
+// Assign first two cards to the player
 let playerCards = [ getNextCard(), getNextCard() ];
 
 console.log("Welcome to Blackjack!")
 console.log("You are dealt: ");
 console.log("  " + getCardString(playerCards[0]));
 console.log("  " + getCardString(playerCards[1]));
-
-
-
-
-
