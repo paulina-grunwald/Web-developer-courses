@@ -100,18 +100,23 @@ function showStatus() {
     textArea.innerText = 'Welcome to Blackjack!'
     return
   }
+
   // Give cards to the dealer
   let dealerCardString = '';
+  for (let i = 0; i < dealerCards.length; i++) {
+    dealerCardString += getCardString(dealerCards[i])+ '\n';
+  }
 
 
   // Give cards to the player
   let playerCardString =  '';
-
-  textArea.innerText = 
+  for(let = 0; i < playerCards.length; i++) {
+    playerCardString += getCardString(playerCards[i]) + '\n';
+  }
 
   updateScores();
+  textArea.innerText = 
 
-}
 
 // Get next card from the deck
 function getNextCard() {
