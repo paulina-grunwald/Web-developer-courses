@@ -37,7 +37,7 @@ showStatus();
 
 // Set up handler for starting new game.
 // When user clicks on new game the game will be started
-newGameButton.addEventListener('click', function(){
+newGameButton.addEventListener('click', function() {
   //Update game variables
   gameStarted = true;
   gameOver = false;
@@ -48,14 +48,25 @@ newGameButton.addEventListener('click', function(){
   // Give two cards for dealer and player
   dealerCards = [ getNextCard(), getNextCard() ];
   playerCards = [ getNextCard(), getNextCard() ];
-  textArea.innerText = 'Started...';
-  newGameButton.style.display = 'none'
+  newGameButton.style.display = 'none';
   hitButton.style.display = 'inline';
   stayButton.style.display = 'inline';
   showStatus();
 });
 
+// Add event listener for hitButton
+hitButton.addEventListener('click', function() {
+  playerCards.push(getNextCard());
+  checkForEndOfGame();
+  showStatus();
+});
 
+// Add event listener for stayButton
+stayButton.addEventListener('click', function() {
+  gameOver = true;
+  checkForEndOfGame();
+  showStatus();
+});
 
 // Create deck function
 function createDeck() {
@@ -86,10 +97,19 @@ function shuffleDeck(deck){
   }
 }
 
+
+
 // Print out name of given card
 function getCardString(card) {
   return card.value + ' of ' + card.suit;
 }
+
+
+// Get next card from the deck
+function getNextCard() {
+  return deck.shift();
+}
+
 
 function getCardNumericValue(card) {
   switch(card.value) {
@@ -133,7 +153,7 @@ function getScore(cardArray){
 }
 
 
-
+// Function for updating scores
 function updateScores() {
   dealerScore = getScore(dealerCards);
   playerScore = getScore(playerCards);
@@ -150,18 +170,17 @@ function showStatus() {
 
   // Give cards to the dealer
   let dealerCardString = '';
-  for (let i = 0; i < dealerCards.length; i++) {
-    dealerCardString += getCardString(dealerCards[i])+ '\n';
-  }
+  for (let i=0; i < dealerCards.length; i++) {
+    dealerCardString += getCardString(dealerCards[i]) + '\n';
+}
 
-
-  // Give cards to the player
-  let playerCardString =  '';
-  for(let = 0; i < playerCards.length; i++) {
+  let playerCardString = '';
+  for (let i=0; i < playerCards.length; i++) {
     playerCardString += getCardString(playerCards[i]) + '\n';
-  }
+}
 
   updateScores();
+
   textArea.innerText =
     'Dealer has:\n' +
     dealerCardString +
@@ -169,6 +188,7 @@ function showStatus() {
     'Player has\n' +
     playerCardString +
     '(score:' + playerScore + ')\n\n';
+
   if (gameOver) {
     if(playerWon) {
       text.Area.innerText += "You Win!";
@@ -180,21 +200,4 @@ function showStatus() {
     hitButton.style.display = 'none';
     stayButton.style.display = 'none'
   }
-
-// Get next card from the deck
-function getNextCard() {
-  return deck.shift();
 }
-
-
-
-// Create deck
-let deck = createDeck();
-
-// Assign first two cards to the player
-let playerCards = [ getNextCard(), getNextCard() ];
-
-console.log("Welcome to Blackjack!")
-console.log("You are dealt: ");
-console.log("  " + getCardString(playerCards[0]));
-console.log("  " + getCardString(playerCards[1]));
