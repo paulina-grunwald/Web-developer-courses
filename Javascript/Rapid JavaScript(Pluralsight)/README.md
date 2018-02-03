@@ -80,7 +80,7 @@ if (isNan(n))
 ```
 
 ### Strings
-You can put strings in single or double quotes. It makes no difference.
+You can put strings in single or double quotes. It makes no difference. Strings are also mutable.
 
 We can
 
@@ -89,7 +89,76 @@ console.log('Nike\'s Order');
 
 ```
 
+We can also calculate lenght of the string using ```.length property```:
+
+```javaScript
+var productType = 'Hardware';
+console.log(productType.length);
+// 8
+```
+
+If we would like to remove all white spaces we can use property ```.trim()```:
+```javaScript
+var productType = '    Hardware   ';
+console.log('[' + productType.trim() + ']')
+// [Hardware]
+```
+
+We can also modify the entire string to lower or upper case using: ```.toUpperCase()``` and ```.toLowerCase()``` e.g
+
+```javaScript
+var animal = 'elephant';
+console.log(animal.toUpperCase());
+```
+### Boolean values
+Always use true instead of True. Using True will casuse ReferenceError: True is not defined.
+
+```javaScript
+var isSpecial = true;
+if (isSpecial)
+  console.log('It is true');
+// It is true
+```
+
+```javaScript
+console.log( Boolean("Hello"));
+// true
+console.log( Boolean(""));
+// false
+console.log( Boolean(" "));
+// true
+console.log( Boolean(5));
+// true
+console.log( Boolean(0));
+// false
+console.log( Boolean(undefined));
+// false
+console.log( Boolean(null));
+// false
+console.log( Boolean(NaN));
+// false
+console.log( Boolean(false));
+// false
+console.log( Boolean());
+// false
+```
+
+! convers string, number and boolean to the Boolean.
+
+```javaScript
+var value = 9.99;
+console.log(typeof !!value);
+
+var value = 9.99;
+console.log(!!value);
+// true
+```
+
+### undefined and null
+
+
 __Primitive Types__
+
 
 __Global Scope__
 
