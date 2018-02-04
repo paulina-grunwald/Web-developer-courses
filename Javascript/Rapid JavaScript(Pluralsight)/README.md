@@ -156,10 +156,96 @@ console.log(!!value);
 
 ### undefined and null
 
+Developts do not use undefined. If they want to wipe out variable null is used.
 
-__Primitive Types__
+```javaScript
+var product
+console.log(typeof product);
+// undefined
+```
+
+If we call variable that is not even initialized we will also get undefined.
+
+```javaScript
+console.log(typeof animal);
+// undefined
+```
+
+When we asign null to the variable it becomes an object.
+
+```javaScript
+var animal = null;
+console.log(typeof animal);
+// object
+```
+
+Thus we can conclude that typeoff null is an object.
+
+```javaScript
+console.log(typeof null);
+// object
+console.log(typeof undefined);
+// undefined
+console.log(undefined == null);
+// true
+console.log(undefined === null);
+// false
+```
+
+### Global scope
+In node.js Global would be the global object but in browser it is window.
 
 
-__Global Scope__
+# Operators
+### Addition
 
-__Function Scope__
+Additiona of floating point numbers in JS is very fast but it can lead to not correct answers.
+```javaScript
+var total = 5.1 + 3.3;
+console.log(total);
+// 8.39999999999999999
+```
+
+To solve this problem method ```.toFixed()``` can be used.
+
+```javaScript
+var total = 5.1 + 3.3;
+console.log(total.toFixed(2)); // round to two decimal places
+// 8.40
+```
+
+
+```javaScript
+var id = 2000 + undefined;
+console.log(id);
+// NaN
+
+var id = "PRD" + undefined;
+console.log(id);
+// PRDundefined
+```
+
+In a numeric context null is treated as 0.
+
+```javaScript
+var num = 100 + null;
+console.log(num);
+// 100
+```
+but it's different in string context:
+
+```javaScript
+var = "PRD" + null;
+console.log(id)
+// PRDnull
+```
+
+When we wnt to add number to NaN JavaScript does not know how to deal with this operation. The result will be NaN.
+
+```javaScript
+var id = 2000 + NaN;
+console.log(id);
+// NaN
+```
+
+### Subtraction
