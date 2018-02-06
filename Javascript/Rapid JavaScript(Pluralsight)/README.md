@@ -249,3 +249,35 @@ console.log(id);
 ```
 
 ### Subtraction
+
+# Array and Reference Types
+
+```Primitive Type Storage```
+
+```javaScript
+var n = 42;
+var a = n;
+```
+var a is a copy of n into - those are two distinct memory locations.
+
+``Reference Type Storage``
+```javaScript
+var o = {
+  name: "Mike"
+};
+```
+JavaScript will create memory location for o but it will not put the value there but a <em>pointer</em>. We do not have access to this pointer. We know it points to the unknown memory location (there the object gets stored).
+
+```javaScript
+var o2 = o;
+```
+JavaScript will copy pointer from o to o2 but will not copy the object. The pointer will point to the memory location (it is the same for o and o2).
+
+```javaScript
+o2.name = "Jack";
+console.log(o2);
+// {name: "Jack"}
+console.log(o);
+// {name: "Jack"}
+```
+If we change value of o2 it will automatically change the value of o as they have the same pointers to the memory location.
