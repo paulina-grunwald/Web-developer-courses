@@ -250,13 +250,18 @@ console.log(id);
 
 ### Subtraction
 
+
 # Array and Reference Types
 
-```Primitive Type Storage```
+Reference types include things like array and objects, dates, RegExp's, Functions and Primitives (via Wrappers).
+
+#### Primitive Type Storage
 
 ```javaScript
 var n = 42;
 var a = n;
+console.log(a);
+// 42
 ```
 var a is a copy of n into - those are two distinct memory locations.
 
@@ -271,7 +276,7 @@ JavaScript will create memory location for o but it will not put the value there
 ```javaScript
 var o2 = o;
 ```
-JavaScript will copy pointer from o to o2 but will not copy the object. The pointer will point to the memory location (it is the same for o and o2).
+JavaScript will copy pointer from o to o2 but will not copy the object. The pointer will point to the memory location (it is the same for o and o2). These are __reference type__. They reference the same object.
 
 ```javaScript
 o2.name = "Jack";
@@ -280,4 +285,48 @@ console.log(o2);
 console.log(o);
 // {name: "Jack"}
 ```
+
 If we change value of o2 it will automatically change the value of o as they have the same pointers to the memory location.
+
+```javaScript
+var person = {
+  name: 'Mike'
+};
+var newPerson = person;
+console.log(newPerson.name);
+// Mike
+```
+
+The <em>instanceof</em> operator tests whether the prototype property of a constructor appears anywhere in the prototype chain of an object.
+
+```javaScript
+var entries = new Array('Mike', 'Adam', 'Maria');
+console.log(entries instanceof Array);
+```
+It is also easy to print out first item from the array.
+
+```javaScript
+var names =['Mike', 'Angela', 'Lory'];
+console.log(names[1]);
+// Angela
+```
+
+If we will try to access entry beyond the array:
+
+```javaScript
+var names =['Mike', 'Angela', 'Lory'];
+console.log(names[5]);
+// undefined
+```
+we will get <em>undefined</em>.
+
+
+If we want to print lenght of the array we will use .length method:
+```javaScript
+var animal = new Array('dog', 'cat', 'bird');
+console.log(animal.length);
+// 3
+animal[10] = 'camel';
+console.log(animal.length);
+// 11
+```
