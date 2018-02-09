@@ -7,7 +7,7 @@
 
 
 
-# 1. Variables, Types, and Scope
+# 2. Variables, Types, and Scope
 
 __Hoisting__ - it refers to having access to variables before they are declared. This concept doesn't exist in other languages. Hoisting works with variables and functions. It can be also called as ```two pass compilation``` in JavaScript.
 
@@ -110,7 +110,7 @@ We can also modify the entire string to lower or upper case using: ```.toUpperCa
 var animal = 'elephant';
 console.log(animal.toUpperCase());
 ```
-### Boolean values
+#### Boolean values
 Always use true instead of True. Using True will casuse ReferenceError: True is not defined.
 
 ```javaScript
@@ -154,7 +154,7 @@ console.log(!!value);
 // true
 ```
 
-### undefined and null
+#### undefined and null
 
 Developts do not use undefined. If they want to wipe out variable null is used.
 
@@ -192,12 +192,12 @@ console.log(undefined === null);
 // false
 ```
 
-### Global scope
+#### Global scope
 In node.js Global would be the global object but in browser it is window.
 
 
-# Operators
-### Addition
+# 3. Operators
+#### Addition
 
 Additiona of floating point numbers in JS is very fast but it can lead to not correct answers.
 ```javaScript
@@ -248,10 +248,10 @@ console.log(id);
 // NaN
 ```
 
-### Subtraction
+#### Subtraction
 
 
-# Array and Reference Types
+# 4. Array and Reference Types
 
 Reference types include things like array and objects, dates, RegExp's, Functions and Primitives (via Wrappers).
 
@@ -393,6 +393,7 @@ console.log(num1.concat(num2));
 ```
 
 The ```slice()``` method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.
+
 ```javaScript
 var city = ['Warsaw', 'Budapest', 'Tokyo', 'Paris', 'Amsterdam'];
 console.log(city.slice(2));
@@ -402,9 +403,79 @@ console.log(animals.slice(1,4));
 //["bison", "camel", "duck"]
 ```
 
-# References
+If we put negative value in the .slice method it will start counting from the end of the array.
+```javaScript
+var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(-2));
+//["duck", "elephant"]
+```
 
+The ```splice()``` method changes the contents of an array by removing existing elements and/or adding new elements.
+
+```javaScript
+var items = ['toy,', 'pen', 'laptop']
+items.splice(1,1, 'spoon');
+console.log(items);
+// ["toy,", "spoon", "laptop"]
+```
+
+The ```reverse()``` method reverses an array in place. The first array element becomes the last, and the last array element becomes the first.
+```javaScript
+var nums = ['one', 'two', 'three'];
+console.log(nums.reverse());
+// ["three", "two", "one"]
+```
+
+
+The ``sort()`` method sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The default sort order is according to string Unicode code points.
+```javaScript
+nums = [33, 12, 5, 1, 67, 100];
+nums.sort();
+console.log(nums);
+// [1, 100, 12, 33, 5, 67]
+
+nums = [33, 12, 5, 1, 67, 100];
+nums.sort(function(value1,value2) {
+  return value1 - value2;
+});
+console.log(nums.toString());
+// 1,5,12,33,67,100
+```
+
+The ```indexOf()``` method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+
+```javaScript
+var dogs = ['beagle', 'husky', 'shiba inu', 'akita'];
+console.log(dogs.indexOf('husky'));
+// 1
+```
+
+If ```indexOf``` can not find a value it returns -1.
+
+
+#### Data Fundamentals
+
+Creates a JavaScript ```Date instance``` that represents a single moment in time.
+
+```javaScript
+var date = new Date();
+console.log(date);
+// Fri Feb 09 2018 10:46:53 GMT+0100 (Central Europe Standard Time)
+```
+Passing a 0 to Date() will result in standard time on January 1st 1970.
+
+#### RegExp
+
+# 5. Objects, JSON, and Prototypes
+# 6. Functions
+# 7. Other References
+# 8. Programming the BOM and DOM
+# 9. Event Handlers
+# 10. Built-in Objects and Functions
+# 11. Miscellaneous JavaScript Topics
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
