@@ -11,8 +11,8 @@
 
 __Hoisting__ - it refers to having access to variables before they are declared. This concept doesn't exist in other languages. Hoisting works with variables and functions. It can be also called as ```two pass compilation``` in JavaScript.
 
-Pass 1: All declarations are located and identifiers are known by the compiler.
-Pass 2: Execution occurs in Pass2 because all variables are known from Pass1, they may be accesses before they are declared.
+``Pass 1:`` All declarations are located and identifiers are known by the compiler.
+``Pass 2:`` Execution occurs in Pass2 because all variables are known from Pass1, they may be accesses before they are declared.
 
 Hoisted variables are initialized to undefined.
 
@@ -465,8 +465,100 @@ console.log(date);
 Passing a 0 to Date() will result in standard time on January 1st 1970.
 
 #### RegExp
+Regular expressions are patterns used to match character combinations in strings. These patterns can be used with the:
+``exec``, ``test``, ``match``, ``replace``, ``search`` and ``split`` methods.
+
+Using RegExp first argument is the string we are looking for and the second is a flag e.g ``g`` - global, ``i`` - case insensitive.
+
+```javaScript
+var text = 'I love JavaScript';
+var pattern = new RegExp('love', 'g');
+console.log(pattern instanceof RegExp);
+// true
+var pattern2 = /I/g;
+console.log(pattern instanceof RegExp);
+// true
+console.log(pattern2.test(text));
+// true
+```
+If we will use .test() mutiple times it will find all patterns that match in entire string.
+
+We can use exec method to find pattern in a string:
+
+```javaScript
+var sentence = "My name is Mike and I code"
+var pattern = /a/g;
+console.log(pattern.exec(sentence));
+// ["a", index: 4, input: "My name is Mike and I code"]
+console.log(pattern.exec(sentence));
+// ["a", index: 16, input: "My name is Mike and I code"]
+```
+We can treat result of pattern.exec as a array!
+
+```javaScript
+var sentence = "My name is Mike and I code"
+var pattern = /is/g;
+var result = (pattern.exec(sentence));
+console.log(result.index);
+// 8
+```
+
+The ``. symbol`` represents any character.
+
+```javascript
+var text = "Today is a nice day";
+console.log(text.match(/.a/g));
+// ["da", " a", "da"]
+```
 
 # 5. Objects, JSON, and Prototypes
+
+#### Simple Objects
+```javaScript
+var fruit = new Object();
+fruit.name = 'banana';
+fruit.color = 'yellow';
+console.log(fruit);
+// {name: "banana", color: "yellow"}
+console.log(fruit.name);
+// banana
+console.log(fruit['color']);
+// yellow
+```
+
+```javaScript
+var country = {
+  name: 'Netherland',
+  people: 'Dutch',
+  language: 'Dutch',
+  capitol: 'Amsterdam',
+  mainCities: ['Amsterdam', 'Rotterdam', 'Utrecht', 'Haarlem']
+};
+console.log(country.mainCities[2]);
+// Utrecht
+```
+
+Call an item from JSON:
+
+```javascript
+var project = {
+  tasks: [
+    {
+      taskName: 'first'
+    },
+    {
+      taskName: 'second'
+    }
+  ]
+};
+console.log(project.tasks[1].taskName);
+// second
+```
+#### Prototype
+
+Every JavaScript Object has a prototype property. We do not always have access to it.
+The prototype property is simply an object.
+
 # 6. Functions
 # 7. Other References
 # 8. Programming the BOM and DOM
@@ -479,3 +571,4 @@ Passing a 0 to Date() will result in standard time on January 1st 1970.
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+- https://www.google.nl/search?safe=strict&ei=Cq19Wr69DofhkgXL3IbAAw&q=regexp+javascript&oq=regExp+javasc&gs_l=psy-ab.3.0.0i67k1j0i10k1l4j0l5.1388.2365.0.3087.7.7.0.0.0.0.119.544.5j2.7.0....0...1c.1.64.psy-ab..0.7.542...0i10i67k1.0.dwsXx1XGAik
