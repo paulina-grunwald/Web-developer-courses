@@ -297,6 +297,8 @@ console.log(newPerson.name);
 // Mike
 ```
 
+#### Array Fundamentals
+
 The <em>instanceof</em> operator tests whether the prototype property of a constructor appears anywhere in the prototype chain of an object.
 
 ```javaScript
@@ -318,7 +320,7 @@ var names =['Mike', 'Angela', 'Lory'];
 console.log(names[5]);
 // undefined
 ```
-we will get <em>undefined</em>.
+we will get ```undefined```.
 
 
 If we want to print lenght of the array we will use .length method:
@@ -330,3 +332,79 @@ animal[10] = 'camel';
 console.log(animal.length);
 // 11
 ```
+
+The ```toString()``` method returns a string representing the object.
+```javaScript
+var fruits = new Array('banana', 'cherry', 'apple');
+console.log(fruits.toString());
+// banana,cherry,apple
+```
+
+The ```valueOf()``` method returns the primitive value of the specified object.
+```javaScript
+var nums = [1,2,4];
+console.log(nums.valueOf());
+// [1,2,4]
+```
+
+The ```join()``` method joins all elements of an array (or an array-like object) into a string and returns this string.
+```javaScript
+var nums = [1,2,4];
+console.log(nums.join('-'));
+// 1-2-4
+```
+
+#### Array Features
+The ```push()``` method adds one or more elements to the end of an array and returns the new length of the array.
+
+```javaScript
+var cars = ['tesla', 'ford'];
+cars.push('fiat');
+console.log(cars);
+// ["tesla", "ford", "fiat"]
+```
+
+The ```shift()``` method removes the first element from an array and returns that removed element. This method changes the length of the array.
+
+```javaScript
+var num = [1, 2, 3];
+var firstElement = num.shift();
+console.log(num);
+// [2, 3]
+console.log(firstElement);
+// 1
+```
+
+The ```unshift()``` method adds one or more elements to the beginning of an array and returns the new length of the array.
+
+```javaScript
+var country = ['Poland', 'USA']
+var newCountry = country.unshift('Brazil');
+console.log(country);
+// ["Brazil", "Poland", "USA"]
+```
+
+The ```concat()``` method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+```javaScript
+var num1 = [1,2,3,4];
+var num2 = [5,8,9];
+console.log(num1.concat(num2));
+// [1, 2, 3, 4, 5, 8, 9]
+```
+
+The ```slice()``` method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.
+```javaScript
+var city = ['Warsaw', 'Budapest', 'Tokyo', 'Paris', 'Amsterdam'];
+console.log(city.slice(2));
+//  ["Tokyo", "Paris", "Amsterdam"]
+var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(1,4));
+//["bison", "camel", "duck"]
+```
+
+# References
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
