@@ -37,8 +37,50 @@ In React, for every DOM object, there is a corresponding "virtual DOM object". A
 
 React components:
   - Function compontent,
-  - Class Component.
+  - Class Component (includes props and internal state)
 
+Properties are called ``props`` in react. State can be changed but props are fixed values. ```Class component can change their internal state but not their properties.```
+
+To create react component we need to simply define a function.
+Properies in React are immutable.
+
+Create button component using React and JSX:
+
+```JavaScript
+const Button = (props) => {
+	return (
+  	<button>GO</button>
+  );
+};
+ReactDOM.render(<Button/>, mountNode);
+```
+
+Now let's create class component so we can add a state.
+
+```javascript
+
+class Button extends React.Component {
+	state = {counter: 0};
+
+  handleClick = () => {
+  	this.setState((prevState) => {
+    	return {
+    	counter: this.state.counter + 1
+      }});
+  };
+
+	// Render() returns the compontent's JSX
+	render() {
+  return (
+  	<button onClick ={this.handleClick}>
+    	{this.state.counter}
+    </button>
+  );
+  }
+}
+
+ReactDOM.render(<Button/>, mountNode);
+```
 
 # References:
 - https://app.pluralsight.com/paths/skills/react
