@@ -557,7 +557,12 @@ console.log(project.tasks[1].taskName);
 #### Prototype
 
 Every JavaScript Object has a prototype property. We do not always have access to it.
-The prototype property is simply an object.
+The prototype property is simply an object. The prototype property is most easily accessed on constructor functions.
+
+
+```javaScript
+
+```
 
 # 6. Functions
 # 7. Other References
@@ -565,6 +570,7 @@ The prototype property is simply an object.
 # 9. Event Handlers
 # 10. Built-in Objects and Functions
 # 11. Miscellaneous JavaScript Topics
+
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
