@@ -1,4 +1,4 @@
-# Rapid JavaScript Training
+# Key learning points from [Rapid JavaScript Training Course](https://app.pluralsight.com/library/courses/rapid-javascript-training/table-of-contents)
 
 
 # 1. JavaScript Basics
@@ -556,12 +556,105 @@ console.log(project.tasks[1].taskName);
 ```
 #### Prototype
 
-Every JavaScript Object has a prototype property. We do not always have access to it.
-The prototype property is simply an object. The prototype property is most easily accessed on constructor functions.
+Every JavaScript Object has a ``prototype property``. We do not always have access to it. The prototype property is simply an object. The prototype property is most easily accessed on constructor functions.
+
+Object.prototype exists as an object.
+
+```javaScript
+console.log(tyoeof Object.prototype);
+// object
+console.log(tyoeof Object.prototype.toString);
+// function
+```
+Every object has an prototype attached to it.
+
+
+### Object.create() and Prototypes
+
+When we want to to have control over the prorotypes we need to use ``Object.create``. The ``Object.create() method`` creates a new object with the specified prototype object and properties.
+
+```javaScript
+var animal = {
+  color: "black"
+};
+console.log(typeof animal);
+// object
+
+var newAnimal = Object.create(animal);
+console.log(newAnimal.color);
+console.log(animal);
+// {color: "black"}
+console.log(newAnimal);
+// {}__proto__: color: "black"__proto__: Object
+```
+
+The prototype of newAnimal is Animal. When we access newAnimal.color color will not be found directly under newAnimal.
+
+
+###  Object.defineProperty()
+
+``The Object.defineProperty() method`` defines a new property directly on an object, or modifies an existing property on an object, and returns the object
+
+There are a lot of flags we can set on properties besides ``value``:
+- ``writable`` - read-only unless true,
+- ``enumerable`` - not listed unless true,
+- ``configurable`` - can't be deleted and attributes can't be modified unless true.
 
 
 ```javaScript
+var car = {};
+Object.defineProperty(car, 'text', {
+  value: 'This car is red.',
+  // Make property writable
+  writable: true,
+  enumerable: true,
+  configurable: false
+});
+console.log(car.text);
+// This car is red
 
+car.text = car.text + ' and is electric.';
+console.log(car.text.);
+// This car is red. and is electric. and is electric.
+
+// Print every field in car
+for (var i in car)
+  console.log(i);
+// text
+
+```
+
+Now we will check what happens if we set writable and configurable to false.
+
+```javaScript
+var bike = {};
+Object.defineProperty(car, 'text', {
+  value: 'This is a roadbike.',
+  // Make property writable
+  writable: false,
+  enumerable: true,
+  configurable: false
+});
+
+Object.defineProperty(car, 'text', {
+  value: 'This car is a city bike'
+});
+console.log(car.text);
+// Uncaught TypeError: Cannot redefine property: text
+// at Function.defineProperty (<anonymous>)  at <anonymous>:1:8
+```
+
+
+### Other Object Functions
+1. hasOwnProperty() function
+
+The ``hasOwnProperty()`` method returns a Boolean indicating whether the object has the specified property as own (not inherited) property.
+
+```javaScript
+fruit = new Object();
+fruit.color = 'yellow';
+console.log(fruit.hasOwnProperty('color'));
+// true
 ```
 
 # 6. Functions
@@ -578,3 +671,4 @@ The prototype property is simply an object. The prototype property is most easil
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 - https://www.google.nl/search?safe=strict&ei=Cq19Wr69DofhkgXL3IbAAw&q=regexp+javascript&oq=regExp+javasc&gs_l=psy-ab.3.0.0i67k1j0i10k1l4j0l5.1388.2365.0.3087.7.7.0.0.0.0.119.544.5j2.7.0....0...1c.1.64.psy-ab..0.7.542...0i10i67k1.0.dwsXx1XGAik
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
