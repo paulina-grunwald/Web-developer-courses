@@ -658,6 +658,75 @@ console.log(fruit.hasOwnProperty('color'));
 ```
 
 # 6. Functions
+
+An ``anonymous function`` is a function that was declared without any named identifier to refer to it. As such, an anonymous function is usually not accessible after its initial creation.
+
+It's easier to debug if we name function instead using anynmous functions
+```javaScript
+var hireEmployee =  function myHireEmploeeFn(name) {
+  throw('Error');
+};
+
+var action = hireEmployee;
+action('JJ');
+// Uncaught Error - myHireEmploeeFn
+```
+
+### Constructor Functions
+
+Object is in fact constructor function. Constructor funcion always begann with capitol letter.
+
+```javaScript
+console.log(typeof Object);
+// function
+```
+
+```javaScript
+var Animal = function (type, name) {
+  this.type = type;
+  this.name = name;
+};
+
+var newAnimal = new Animal('cat', 'Neko');
+console.log(typeof newAnimal);
+// object
+
+console.log(newAnimal.type);
+// cat
+console.log(newAnimal.name);
+// Neko
+
+console.log(typeof newAnimal.type);
+// string
+```
+
+When we work with the constructor functions we have access to the.prototype.
+
+
+```javaScript
+var Employee = funcion (name) {
+  this.name = name;
+};
+
+Employee.prototype.giveRaise = function () {
+};
+
+var e1 = new Employee('JJ');
+var e2 = new Employee('JV');
+console.log(e1.giveRaise === e2.giveRaise);
+// true
+```
+
+### This keyword
+
+```javaScript
+console.log(typeof this);
+// object
+console.log(this === window);
+// true
+```
+
+
 # 7. Other References
 # 8. Programming the BOM and DOM
 # 9. Event Handlers
