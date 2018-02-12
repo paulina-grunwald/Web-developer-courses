@@ -42,8 +42,8 @@ React components:
 Properties are called ``props`` in react. State can be changed but props are fixed values. ```Class component can change their internal state but not their properties.```
 
 To create react component we need to simply define a function.
-Properies in React are immutable.
-
+Properties in React are immutable.
+The State of the component can be accessed only by this component.
 Create button component using React and JSX:
 
 ```JavaScript
@@ -81,6 +81,11 @@ class Button extends React.Component {
 
 ReactDOM.render(<Button/>, mountNode);
 ```
+
+# REACT Fundamentals
+
+## 1. Components
+
 
 # References:
 - https://app.pluralsight.com/paths/skills/react
