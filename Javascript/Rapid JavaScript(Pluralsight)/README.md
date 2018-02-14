@@ -723,9 +723,48 @@ console.log(e1.giveRaise === e2.giveRaise);
 console.log(typeof this);
 // object
 console.log(this === window);
-// true
+// true -  this will not work in the node as it works on server
+
+var name = 'Paulina';
+console.log(this.name);
+// Paulina
 ```
 
+In the global enviroment this is asign to the object in following example
+```javaScript
+var person = {
+  name: "Paulina",
+  updateSalary: function () {
+    console.log(this);
+  }
+};
+
+person.updateSalary();
+// {name: "Paulina", updateSalary: ƒ}
+```
+
+### Calling functions using call() and apply()
+
+The fundamental difference between ``call()`` and ``apply()`` is that call() accepts an argument list, while apply() accepts a single array of arguments.
+
+When we want to have more control over this we can use call() and apply().
+
+```javaScript
+var animal = function (){
+  console.log(this);
+};
+animal.call({type: 'elephant'});
+// {type: "elephant"}
+
+```
+
+The ```apply()``` method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+
+```javaScript
+var nums = [15, 64, 22, 3, 1];
+
+var max = Math.max.apply(null, numbers);
+```
 
 # 7. Other References
 # 8. Programming the BOM and DOM
