@@ -46,6 +46,7 @@ Advantage of bracket notation is that it can be used using variables.
 ### 1.3 Demo - Create task application
 
 1. Create task object
+
 ``` JavaScript  
 var task = {};
 
@@ -60,12 +61,37 @@ console.log(task.toString());
 console.log(task.description)
 ```
 
+The static ``method Object.defineProperty()`` defines a new property directly on an object, or modifies an existing property on an object, and returns the object.
+
+``Object.create()`` can be used for inheritance.
+
 # 2. Creational Design Patterns
-Creational patterns deal with creation of a new object. There are numeber of creational design patterns:
+
+### 2.1 Creational patterns
+Deals with creation of a new object. There are number of creational design patterns:
 - Constructor
 - Module
 - Factory
 - Singleton
+
+``Constructor Pattern``  is used to create new object with their own scope.
+
+The <em>new</em> keyword:
+- creates a brand new object,
+- links the object to an object prototype,
+- it binds 'this' to the new object scope,
+- returns this.
+
+This is constructor pattern (to create objects from functions):
+```javascript
+function ObjectName(param1, param2) {
+  this.param1 = param1;
+  this.param2 = param2;
+  this.toString = function () {
+    return this.param1 + ' ' + this.param2;
+  }
+}
+```
 
 
 # 3. Structural Design Patterns
