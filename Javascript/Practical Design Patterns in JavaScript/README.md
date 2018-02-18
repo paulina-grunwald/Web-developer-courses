@@ -14,6 +14,8 @@
 
 ### 1.1 Creating Objects in JavaScript
 
+``Prototype`` - an encapsulation of properties that an object links to.
+
 ```JavaScript
 //Create new object using {}
 var obj = {}
@@ -65,9 +67,9 @@ The static ``method Object.defineProperty()`` defines a new property directly on
 
 ``Object.create()`` can be used for inheritance.
 
+
 # 2. Creational Design Patterns
 
-### 2.1 Creational patterns
 Deals with creation of a new object. There are number of creational design patterns:
 - Constructor
 - Module
@@ -82,17 +84,22 @@ The <em>new</em> keyword:
 - it binds 'this' to the new object scope,
 - returns this.
 
-This is constructor pattern (to create objects from functions):
+This is ``constructor function`` (to create objects from functions) with passed in two parameters:
+
+
 ```javascript
 function ObjectName(param1, param2) {
   this.param1 = param1;
   this.param2 = param2;
+  // method that returns param1 and param2
   this.toString = function () {
     return this.param1 + ' ' + this.param2;
   }
 }
 ```
 
+
+Objects can be created one in one file and then you can use those objects by newing them up in the rest of the application.
 
 # 3. Structural Design Patterns
 Structural design pattern deal with the make up of the objects themselves.
