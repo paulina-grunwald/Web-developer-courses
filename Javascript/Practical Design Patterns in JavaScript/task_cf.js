@@ -14,3 +14,6 @@ Task.prototype.complete = function(){
 Task.prototype.save = function() {
   console.log('saving Task: ' + this.name);
 };
+
+// Export Task
+module.exports = Task;
