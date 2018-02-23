@@ -659,9 +659,10 @@ console.log(fruit.hasOwnProperty('color'));
 
 # 6. Functions
 
-An ``anonymous function`` is a function that was declared without any named identifier to refer to it. As such, an anonymous function is usually not accessible after its initial creation.
+### Functions Names
 
-It's easier to debug if we name function instead using anynmous functions
+An ``anonymous function`` is a function that was declared without any named identifier to refer to it. As such, an anonymous function is usually not accessible after its initial creation. It's easier to debug if we name function instead using anonymous functions.
+
 ```javaScript
 var hireEmployee =  function myHireEmploeeFn(name) {
   throw('Error');
@@ -674,12 +675,17 @@ action('JJ');
 
 ### Constructor Functions
 
-Object is in fact constructor function. Constructor funcion always begann with capitol letter.
+Object is in fact constructor function. Constructor function always began with capitol letter and has access to the prototype.
 
+Type of ``Object`` is not object but a ``constructor function``.
 ```javaScript
 console.log(typeof Object);
 // function
 ```
+
+``When we work with constructor functions we do have access to the prototype.``
+
+Below example of the constructor function can be found. The ``this`` keyword refers to the current object (object that is passed to the function).
 
 ```javaScript
 var Animal = function (type, name) {
@@ -700,7 +706,24 @@ console.log(typeof newAnimal.type);
 // string
 ```
 
-When we work with the constructor functions we have access to the.prototype.
+When we work with the constructor functions we have access to the prototype.
+
+```javaScript
+var Car = function (name) {
+  this.name = name;
+  this.price = function () {
+  };
+};
+
+var car1 = new Car('ford');
+var car2 = new Car('tesla');
+console.log(car1.price === car2.price);
+// false
+console.log(typeof Employee.prototype);
+// object
+```
+
+It's not good practice to add functions to the constructor functions because the function will be duplicated number of times. We will add it to constructor function.prototype.
 
 
 ```javaScript
@@ -716,6 +739,8 @@ var e2 = new Employee('JV');
 console.log(e1.giveRaise === e2.giveRaise);
 // true
 ```
+
+
 
 ### This keyword
 
@@ -766,11 +791,11 @@ var nums = [15, 64, 22, 3, 1];
 var max = Math.max.apply(null, numbers);
 ```
 
-# 7. Other References
-# 8. Programming the BOM and DOM
-# 9. Event Handlers
-# 10. Built-in Objects and Functions
-# 11. Miscellaneous JavaScript Topics
+
+# 7. Programming the BOM and DOM
+# 8. Event Handlers
+# 9. Built-in Objects and Functions
+# 10. Miscellaneous JavaScript Topics
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
