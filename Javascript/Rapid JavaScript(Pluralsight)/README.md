@@ -1,4 +1,4 @@
-# Key learning points from [Rapid JavaScript Training Course](https://app.pluralsight.com/library/courses/rapid-javascript-training/table-of-contents)
+Observables# Key learning points from [Rapid JavaScript Training Course](https://app.pluralsight.com/library/courses/rapid-javascript-training/table-of-contents)
 
 
 # 1. JavaScript Basics
@@ -683,7 +683,7 @@ console.log(typeof Object);
 // function
 ```
 
-``When we work with constructor functions we do have access to the prototype.``
+``When we work with constructor functions we do have access to the .prototype. When we work with JSON object we don't. The only way to access prototype using JSON is to use .proto``
 
 Below example of the constructor function can be found. The ``this`` keyword refers to the current object (object that is passed to the function).
 
@@ -729,24 +729,31 @@ It's not good practice to add functions to the constructor functions because the
 ```javaScript
 var Employee = funcion (name) {
   this.name = name;
+  this.salary = 50000;
 };
 
-Employee.prototype.giveRaise = function () {
+Employee.prototype.giveRaise = function (raise) {
+  this.salary += raise;
 };
 
 var e1 = new Employee('JJ');
 var e2 = new Employee('JV');
 console.log(e1.giveRaise === e2.giveRaise);
 // true
+
+e1.giveRaise(1000);
+console.log(e1.salary);
 ```
 
 
 
 ### This keyword
+Check type of ``this``:
 
 ```javaScript
 console.log(typeof this);
 // object
+
 console.log(this === window);
 // true -  this will not work in the node as it works on server
 
@@ -755,7 +762,8 @@ console.log(this.name);
 // Paulina
 ```
 
-In the global enviroment this is asign to the object in following example
+In the global environment this is assign to the object in following example:
+
 ```javaScript
 var person = {
   name: "Paulina",
@@ -767,6 +775,8 @@ var person = {
 person.updateSalary();
 // {name: "Paulina", updateSalary: ƒ}
 ```
+
+
 
 ### Calling functions using call() and apply()
 
@@ -780,23 +790,112 @@ var animal = function (){
 };
 animal.call({type: 'elephant'});
 // {type: "elephant"}
+```
+It is also possible to call functions with multiple variables:
 
+```javaScript
+var updateZipCode = function(newZip, country) {
+  console.log(newZip + ' ' + country);
+};
+var zipCode = {
+  zip: '1234'
+};
+updateZipCode.call(zipCode, '12345', 'us');
 ```
 
 The ```apply()``` method calls a function with a given this value, and arguments provided as an array (or an array-like object).
 
 ```javaScript
 var nums = [15, 64, 22, 3, 1];
-
-var max = Math.max.apply(null, numbers);
+var max = Math.max.apply(null, nums);
+console.log(max);
+// 64
 ```
 
 
-# 7. Programming the BOM and DOM
-# 8. Event Handlers
-# 9. Built-in Objects and Functions
-# 10. Miscellaneous JavaScript Topics
+### Closures
+A ``closure`` is the combination of a function and the lexical environment within which that function was declared.
 
+```javaScript
+var priceDicount = function(price) {
+  var discount = function() {
+    currentPrice = price - 20;
+    return currentPrice;
+  };
+  // gives access to the closure
+  return discount;
+};
+
+var updateFn = priceDicount(70);
+console.log(updateFn());
+// 50
+```
+
+``Event handlers`` are common places to see closures.
+
+### IIFEs
+
+``IIFE (Immediately Invoked Function Expression)`` is a JavaScript function that runs as soon as it is defined. The main purpose of using IFFEs is to avoid code polluting the global space.
+Example of IIFE:
+```javaScript
+(function () {
+  console.log('Executed');
+})();
+// Executed!
+```
+
+```javaScript
+var app = {};
+(function (ns) {
+  ns.name = 'MyApp'
+})(app);
+console.log(app.name);
+// MyApp
+```
+
+### Recursion
+
+``Recursion`` in JavaScript is, simply put, the ability to call a function from within itself. When constructing a recursive function in JavaScript there must always be a ``Leave Event``. Leave Event is control statement that allows the function to exit the recursive loop.
+
+```javaScript
+function countDown(n) {
+  console.log(n);
+  if(n >= 1) countDown(n-1);
+}
+countDown(5);
+```
+
+
+
+
+# 7. Programming the BOM and DOM
+DOM -  document object model
+
+### The window Object and Timers
+### System Dialogs
+### The location Object
+### Document Basics
+### Query Selectors
+
+
+# 8. Event Handlers
+### Events
+### The Event Object
+### Handling Events
+### Event Bubbling
+
+# 9. Built-in Objects and Functions
+### Global Functions
+### The Math Object
+### The String Object
+### Arguments
+
+# 10. Miscellaneous JavaScript Topics
+### Error Handling Using try, catchm
+### Promises and Observables
+### Strict Mode
+### JSLint and JSHint
+### Modular JavaScript
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
@@ -805,3 +904,4 @@ var max = Math.max.apply(null, numbers);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 - https://www.google.nl/search?safe=strict&ei=Cq19Wr69DofhkgXL3IbAAw&q=regexp+javascript&oq=regExp+javasc&gs_l=psy-ab.3.0.0i67k1j0i10k1l4j0l5.1388.2365.0.3087.7.7.0.0.0.0.119.544.5j2.7.0....0...1c.1.64.psy-ab..0.7.542...0i10i67k1.0.dwsXx1XGAik
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
+- https://medium.com/@zfrisch/understanding-recursion-in-javascript-992e96449e03
