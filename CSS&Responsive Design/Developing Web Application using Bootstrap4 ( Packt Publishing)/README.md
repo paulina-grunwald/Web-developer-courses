@@ -21,7 +21,30 @@ Three main tags need to be added at the beginning  of bootstrap in the head. The
 <meta name="viewport" content="width=device-width", initial-scale=1>
 ```
 
-Now I will continue buidling first Boostrap example and will use CDN setup.
+Below start-up template can be found:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width", initial-scale=1>
+	<title>Hello World</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	Hello World!
+	<script sr="js/jquery-3.3.1.js" charset="utf-8"></script>
+	<script src="js/bootstrap.js" charset="utf-8"></script>
+</body>
+</html>
+```
+Now I will continue building first Boostrap example and will use CDN setup. I will add jumbotron element to my page.
+``Jumbotron`` is a  flexible component that can optionally extend the entire viewport to showcase key marketing messages on the site.
+
+``.jumbotron-fluid`` - removes rounded corners and makes jumbotron full width (has to be used in combination with .container-fluid or .container)
+
 
 
 # REFERENCES
