@@ -12,6 +12,8 @@ This file includes notes and exercises from [GETTING STARTED WITH BOOTSTRAP 4 FO
 
 # 1. Getting Started
 
+Bootstrap is one of the best frameworks for building web apps. It speeds up development and maintain coherence of elements used. It supports the most recent versions of the browsers.
+
 Latest Bootstrap version can be found on getboostrap.com. Boostrap4 requires ``<!DOCTYPE html>`` before <html> tag.
 Three main tags need to be added at the beginning  of bootstrap in the head. These tags are used for text encoding and visualizaion on the mobile devices. The ``viewport`` is related to the fact that we should design our website first for mobile and by adding it we ensure proper rendering on mobile devices and touch zooming. Zoom functionality can be disabled by adding ``content="user-scalable=no``.
 
@@ -45,6 +47,32 @@ Now I will continue building first Boostrap example and will use CDN setup. I wi
 
 ``.jumbotron-fluid`` - removes rounded corners and makes jumbotron full width (has to be used in combination with .container-fluid or .container)
 
+To create a button we can use following code:
+```html
+<a class="btn btn-info btn-lg" href="#" role="button">Link</a>
+```
+If we choose class ``btn-block`` the button will increase width over entire element.
+
+
+[Bootlint](https://github.com/twbs/bootlint) is a tool that checks for several common HTML mistakes in webpages that are using Bootstrap in a fairly "vanilla" way.
+
+Boostrap provides headings from h1 to h6.
+
+Bootstrap is based on grid system. In a grid layout, content must be placed within columns and only columns may be immediate children of rows.
+
+Example:
+
+```html
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8">col-sm-8</div>
+		<div class="col-sm-4">col-sm-4</div>
+	</div>
+</div>
+```
 
 
 # REFERENCES
+- https://getbootstrap.com/docs/4.0/layout/grid/
+- https://wkvedu.com/2017/05/12/5-important-reasons-to-have-good-website-design/
+- https://image.freepik.com/free-icon/instagram-logo_318-84939.jpg
