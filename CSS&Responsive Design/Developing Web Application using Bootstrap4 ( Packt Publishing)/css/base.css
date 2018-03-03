@@ -1,0 +1,22 @@
+pre {
+  margin-top: 3.44rem;
+}
+
+blockquote {
+  margin-top: 1.25rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+/*if the view is larger than 48em the rule wil not be applied*/
+@media(max-width: 48em) {
+  table.btn {
+  	/* change size of font*/
+    font-size:0.75rem;
+    font-size: 3.5vw;
+  }
+
+}
