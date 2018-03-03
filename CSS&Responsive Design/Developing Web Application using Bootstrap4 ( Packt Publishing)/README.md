@@ -53,12 +53,13 @@ To create a button we can use following code:
 ```
 If we choose class ``btn-block`` the button will increase width over entire element.
 
+# 2. Creating a Solid Scaffolding
 
 [Bootlint](https://github.com/twbs/bootlint) is a tool that checks for several common HTML mistakes in webpages that are using Bootstrap in a fairly "vanilla" way.
 
-Boostrap provides headings from h1 to h6.
+Bootstrap provides headings from h1 to h6.
 
-Bootstrap is based on grid system. In a grid layout, content must be placed within columns and only columns may be immediate children of rows.
+Bootstrap is based on grid system. In a grid layout, content must be placed within columns and only columns may be immediate children of rows. The grid system adapts for every viewport and resolution.
 
 Example:
 
@@ -70,6 +71,45 @@ Example:
 	</div>
 </div>
 ```
+
+
+It's also possible to create ``tables`` with Boostrap4. Tables are built from <thread></thread> which is responsible for table header and <tbody></tbody> for storing the content of the table.
+
+```html
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+# 3. Mobile First
+
 
 
 # REFERENCES
