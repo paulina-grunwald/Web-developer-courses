@@ -110,9 +110,16 @@ It's also possible to create ``tables`` with Boostrap4. Tables are built from <t
 
 # 3. Mobile First
 
+```html
+<div class="col-md-8">
+	<img src="https://wkvedu.com/wp-content/uploads/2017/05/3.jpg" class="img-responsive hidden-xs">
+	<img src="img/logo.png" class="img-responsive visible-xs">
+</div>
+```
 
 
 # REFERENCES
 - https://getbootstrap.com/docs/4.0/layout/grid/
 - https://wkvedu.com/2017/05/12/5-important-reasons-to-have-good-website-design/
 - https://image.freepik.com/free-icon/instagram-logo_318-84939.jpg
+- https://bootstraplogos.com/wp-content/uploads/edd/2017/11/logo-44.png
