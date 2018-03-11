@@ -864,23 +864,89 @@ function countDown(n) {
 }
 countDown(5);
 ```
-
-
+When the function can call itself it's better to name that function rather than keeping it anonymous.
 
 
 # 7. Programming the BOM and DOM
-DOM -  document object model
+DOM - Document Object Model
+BOM- Browser Object Model
 
 ### The window Object and Timers
+Timers are part of the browser and they can be accessed by the window object.
+
+```javaScript
+console.log(window.screenLeft + ', ' + window.screenRight);
+
+console.log(window.innerWidth + ', ' + window.outerWidth);
+```
+
+Find the current day time and then
+
+```javaScript
+console.log(new Date().getSeconds());
+setTimeout(function () {
+  console.log(new Date().getSeconds());
+}, 1000);
+```
+
 ### System Dialogs
+
 ### The location Object
+
 ### Document Basics
+
 ### Query Selectors
 
 
 # 8. Event Handlers
+
 ### Events
+__User Interface Eevents:__
+load - used when webpage is loaded
+unload - when a page unloads
+abort - if loading gets interrupted
+error - if there is error in the browser
+select - if users selects something in the browser (e.g with mouse or keyboard)
+resize - one of the viewport resizes
+scroll - fired when user scrolls the webpage
+
+__Mouse and Mouse Wheel Events:__
+click
+dbclick
+mousedown
+mouseenter
+mouseleave
+mousemove
+mouseout
+mouseover
+
+__Keyboard and Text Events:__
+keydown  
+keypress
+keyup
+TextInput
+
+__Focus Events:__
+blur
+focus
+focusin
+focusout
+
+__HTML5 Events:__
+
+contextmenu
+beforeunload
+
+__Touch Events:__
+touchstart
+touchmove
+touchend
+touchcancel
+
+
 ### The Event Object
+
+
 ### Handling Events
 ### Event Bubbling
 
