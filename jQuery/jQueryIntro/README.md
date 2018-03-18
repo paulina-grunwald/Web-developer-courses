@@ -33,8 +33,41 @@ To manipulate the DOM with jQuery we can select HTML element with # e.g $('#cont
 
 Selector is a way to select node from the DOM. It is possible to select multiple or single elements.
 
+Node can be selected by using $. e.g
+
+````javascript
+$(document).ready(function (){
+  // find all the span tags
+  var spans = $('span');
+  alert(spans.length);
+)};
+````
+
+``.prop( propertyName )`` - Get the value of a property for the first element in the set of matched elements.
+
 #### Select Nodes by Tag Name
 
+In order to select element by its ID we can use ``#`` sign. e.g ``$('#myID')``. It selects e.g <p id="myID"> element.
+
+````JavaScript
+// Select element by id
+alert($("#heading").html());
+// change color of id=Heading
+$('#heading').css('background-color', 'Yellow');
+````
+
+#### Selecting Nodes by Class Name
+e.g ```$('.myClass')```.
+
+In order to select element by its class we can use ``.`` character.
+
+It is also possible to search for multiple tags (we need to use ``,`` to separate the class names. It is also possible to combine element's name with the selement's ID.
+e.g ''$('a.myClass')``.
+
+#### Selecting Nodes by Attribute Value
+
+#### Selecting Input Nodes
+To select all input elements we can use```$(':input')```. This will select input, select, textarea, button, image , radio and more.
 
 # Interacting with the DOM
 # Handling Events
