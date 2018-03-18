@@ -64,8 +64,8 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2 class='heading1'>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h2 id='heading'>Heading</h2>
+          <p class="text1">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
@@ -76,10 +76,27 @@
         <div class="col-md-4">
           <h4>Heading</h4>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
-
+      <!-- form -->
+      <form id="form">
+        <table style="width:300px;">
+          <tr>
+            <td style="width:30%">Name</td>
+            <td style="width:70%"><input id="FirstName" value="Mark" type="text"/></td>
+          </tr>
+          <tr>
+            <td style="width:30%">Surname</td>
+            <td style="width:70%"><input id="Surname" value="Jonson" type="text"/></td>
+          </tr>
+          <tr>
+            <td><input id="SubmitButton" type="button" value="Submit"/></td>
+          </tr>
+        </form>
+      <!-- end of form -->
+      <div class="copy">
+        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
       <hr>
 
       <footer>
