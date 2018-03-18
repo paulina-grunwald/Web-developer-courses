@@ -66,8 +66,16 @@ e.g ''$('a.myClass')``.
 
 #### Selecting Nodes by Attribute Value
 
+
 #### Selecting Input Nodes
+
+
 To select all input elements we can use```$(':input')```. This will select input, select, textarea, button, image , radio and more.
+
+
+#### Additional Selector Features
+- ``:contains()`` will select elements that match the contents within the contains exceptions: ```JavaScript $('div:contains("Button")')```.
+This will result in selecting divs that contain the text Button (its case sensitive)
 
 # Interacting with the DOM
 # Handling Events
