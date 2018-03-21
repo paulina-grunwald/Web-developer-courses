@@ -53,7 +53,26 @@ CSS Preprocessor allows us to write the CSS faster and minify it. Actually, it w
 ```
 
 ### SAS and CSS
+In _variable.css we can set up global variables e.g
 
+``` javascript
+$primaryCOlor :#424e64;
+$font-color: #424e67;
+```
+
+Now we can use those variables on our pages e.g
+``html
+header {
+  background-color: $primaryColor;
+}
+``
+
+If we want to push the items from the left or right side we can use padding:
+```html
+padding: 1rem 2%;
+```
+
+``line-height`` attribute can be used to space out lines of text.
 
 # REFERENCES
 - http://koala-app.com/
