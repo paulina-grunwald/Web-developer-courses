@@ -14,8 +14,7 @@
 
 jQuery is represented by single file and work cross-browser. It allows to select things in the DOM and manipulate them and has rich event infrastructure. jQuery supports Ajax. Moreover, there are many plugins for jQuery which will make development much faster.
 
-jQuery ``.ready()`` function can detect when a page has loaded.
-Use ``$(document).ready()`` to detect when a page has loaded (DOM hierarchy but before all images have loaded) and it is ready to use.
+jQuery ``.ready()`` function can detect when a page has loaded. Use ``$(document).ready()`` to detect when a page has loaded (DOM hierarchy but before all images have loaded) and it is ready to use.
 
 ```javascript
 <script type="text/javascript">
@@ -47,7 +46,7 @@ $(document).ready(function (){
 
 #### Select Nodes by Tag Name
 
-In order to select element by its ID we can use ``#`` sign. e.g ``$('#myID')``. It selects e.g <p id="myID"> element.
+In order to select element by its ID we can use ``#`` sign. e.g ```JavasSript $('#myID')```. It selects e.g <p id="myID"> element.
 
 ````JavaScript
 // Select element by id
@@ -56,27 +55,66 @@ alert($("#heading").html());
 $('#heading').css('background-color', 'Yellow');
 ````
 
+
 #### Selecting Nodes by Class Name
-e.g ```$('.myClass')```.
+e.g
+````JavaScript
+$('.myClass')````
 
 In order to select element by its class we can use ``.`` character.
 
-It is also possible to search for multiple tags (we need to use ``,`` to separate the class names. It is also possible to combine element's name with the selement's ID.
-e.g ''$('a.myClass')``.
+It is also possible to search for multiple tags (we need to use ``,`` to separate the class names. It is also possible to combine elements name with the element names.
+
+````javascript
+$('a.myClass')
+````
+
 
 #### Selecting Nodes by Attribute Value
+In order to select attribute we need to use brackerts ``[attribute]`` e.g
 
+````javascript
+$('a[title]')
+
+$('a[title = "Coding"]')
+````
 
 #### Selecting Input Nodes
 
+To select all input elements we can use ````javaScript
+$(':input')````. This will select input, select, textarea, button, image , radio and more.
 
-To select all input elements we can use```$(':input')```. This will select input, select, textarea, button, image , radio and more.
+This code:
 
+````javaScript
+$(':input[type="radio"]')
+````
+targets all radio buttons on the page.
+
+Below code will select all the inputs and inject value Foo.
+
+````javascript
+$(':input').each(function() {
+  var elem = $(this);
+  alert(elem.val('Foo'));
+});
+````
 
 #### Additional Selector Features
-- ``:contains()`` will select elements that match the contents within the contains exceptions: ```JavaScript $('div:contains("Button")')```.
+
+- ``:contains()`` will select elements that match the contents within the contains exceptions:
+````JavaScript
+$('div:contains("Button")')````
 This will result in selecting divs that contain the text Button (its case sensitive)
+
+[JQuery selectors documentation can be found here](http://api.jquery.com/category/selectors/)
+
+
+
 
 # Interacting with the DOM
 # Handling Events
 # Working with Ajax Features
+
+
+# Interacting with the DOM
