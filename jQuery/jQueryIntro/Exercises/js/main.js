@@ -19,12 +19,15 @@ $(document).ready(function (){
   alert($("#heading").html());
   // change color of id=Heading
   $('#heading').css('background-color', 'Yellow');
-
+// apply style to the class text1
   $('.text1').css('border', '2px solid blue');
 
 
-  //select inputs
-  var inputs = $(':input');
-  alert($(inputs[1]).val());
+  //select inputs and change value o Foo
+  $(':input').each(function() {
+    var elem = $(this);
+    alert(elem.val('Foo'));
+  });
+
 
 });
