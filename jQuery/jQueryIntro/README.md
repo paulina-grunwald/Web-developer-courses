@@ -81,8 +81,8 @@ $('a[title = "Coding"]')
 
 #### Selecting Input Nodes
 
-To select all input elements we can use ````javaScript
-$(':input')````. This will select input, select, textarea, button, image , radio and more.
+To select all input elements we can use ``
+$(':input')``. This will select input, select, textarea, button, image , radio and more.
 
 This code:
 
@@ -90,6 +90,21 @@ This code:
 $(':input[type="radio"]')
 ````
 targets all radio buttons on the page.
+
+This code gets the first value from the input:
+
+````javascript
+var inputs = $(':input');
+alert($(inputs[1]).val());
+````
+
+If we want to find all inputs in the specifc form we can find it using ID
+````javascript
+$('#form1 :input').each(function () {
+  var elem = $(this);
+  alert(elem.val());
+});
+````
 
 Below code will select all the inputs and inject value Foo.
 
@@ -100,12 +115,27 @@ $(':input').each(function() {
 });
 ````
 
+
 #### Additional Selector Features
 
-- ``:contains()`` will select elements that match the contents within the contains exceptions:
-````JavaScript
+Additional selectors help to select elements e.g depending on text they contain or attributes they start or end with.
+
+- ``:contains()`` will select elements that match the contents within the contains exceptions e.g
+
+  ````JavaScript
 $('div:contains("Button")')````
 This will result in selecting divs that contain the text Button (its case sensitive)
+
+
+- ``$('tr:odd')`` and  ``$('tr:even')`` can be used to select odd or even rows in a table.
+
+- ``$('element:first-child')`` can be used to select the first child of every element group e.g
+  ````JavaScript
+``$('span:first-child')``
+
+-  ``[attribute^="value"]`` can be used to select elements with an attribute that begins with stated value e.g ``$('input[value^="Events"]')``. ``[attribute$="value"]`` will select elements with an attribute that ends with the stated value and ``[attribute*="value"]`` elements with an attribute that contains stated value.
+
+
 
 [JQuery selectors documentation can be found here](http://api.jquery.com/category/selectors/)
 
@@ -113,7 +143,13 @@ This will result in selecting divs that contain the text Button (its case sensit
 
 
 # Interacting with the DOM
+
+
 # Handling Events
+- Events notify program that a user performed some type of action.
+
+
+
 # Working with Ajax Features
 
 
