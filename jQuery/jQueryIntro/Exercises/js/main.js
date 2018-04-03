@@ -29,5 +29,7 @@ $(document).ready(function (){
     alert(elem.val('Foo'));
   });
 
+  // select all odd rows in the table
+  $('tr:even').css('background-color', 'red');
 
 });
