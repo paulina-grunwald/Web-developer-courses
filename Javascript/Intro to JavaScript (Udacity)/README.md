@@ -90,6 +90,7 @@ var name = "James";
 name[0];
 //Returns: "J"
 ```
+ESCAPING CHARACTTERS:
 __Quotes within strings__ - If you want to use quotes inside a string, and have JavaScript not misunderstand your intentions, you’ll need a different way to write quotes. Thankfully, JavaScript has a way to do this using the ````backslash character ( __\__ )````. e.g
 
 ```JavaScript
@@ -121,11 +122,11 @@ console.log(x);
 ```
 __NaN__ stands for __"Not-A-Number"__ and it's often returned indicating an error with number operations. For instance, if you wrote some code that performed a math calculation, and the calculation failed to produce a valid number, NaN might be returned.
 
-__implicit type coercion__ - you do not need to specify data type writing javascript code. The code is interpreted by JavaScript engine and it will be automatically converted into the "appropiate" data types.
+__implicit type coercion__ - you do not need to specify data type writing javascript code. The code is interpreted by JavaScript engine and it will be automatically converted into the "appropriate" data types.
 
  __A strongly typed language__ is a programming language that is more likely to generate errors if data does not closely match an expected type. Because JavaScript is loosely typed, you don’t need to specify data types; however, this can lead to errors that are hard to diagnose due to implicit type coercion.
 
-__Strict equality__ - normally used in JavAscipt to perfom comparision (===)
+__Strict equality__ - normally used in JavAscipt to preform comparisons (===)
 
 __Semicolons__ - In JavaScript semicolons make it clear where one statement ends and another begins.
 
@@ -137,7 +138,7 @@ Data types:
 - Null (A variable that contains null contains no valid number, string, boolean, array, or object. You can erase the contents of a variable (without deleting the variable) by assigning it the null value.)
 - Undefined(The undefined value is returned when you use an object property that does not exist, or a variable that has been declared, but has never had a value assigned to it.)
 
-JavaScript is a loosely typed or dynamic language, meaning you don't need to declare a variable's type ahead of time and the language autmatically determines a variable's type while the program is being processed.
+JavaScript is a loosely typed or dynamic language, meaning you don't need to declare a variable's type ahead of time and the language automatically determines a variable's type while the program is being processed.
 
 
 ## Conditionals
@@ -186,7 +187,7 @@ __Logical Operators__
 2. value1 __||__ value2 - Logical OR - returns true if either value1 or value2 (or even both!) evaluate to true.
 3. !value1 - Logical NOT - returns the opposite of value1. If value1 is true then !value1 is false.
 
-- __short-circuiting__ - describes the event when later arguments in a logical expression are not considered because the first argument already satisfies the condition.
+__Short-circuiting__ - describes the event when later arguments in a logical expression are not considered because the first argument already satisfies the condition.
 
 __Exercise__:
 
@@ -224,7 +225,43 @@ if (((flavor === "vanilla")|| (flavor=== "chocolate"))
 
 ```
 
+__Thruthy and Falsy__
+Every value in JavaScript has an inherent boolean value. When that value is evaluated in the context of a boolean expression, the value will be transformed into that inherent boolean value.
 
+A value is ``falsy`` if it converts to false when evaluated in a boolean context.
+
+A value is ``truthy`` if it converts to true when evaluated in a boolean context
+
+
+List of all of the falsy values:
+``
+- the Boolean value false
+- the null type
+- the undefined type
+- the number 0
+- the empty string ""
+- the odd value NaN
+``
+List of some other examples of truthy values:
+``
+- true
+- 42
+- "pizza"
+- "0"
+- "null"
+- "undefined"
+- {}
+- []
+``
+
+__Ternary operator__
+
+Example of usage of ternary operator:
+```JavAscipt
+var isGoing = true;
+var color = isGoing ? "green" : "red";
+console.log(color);
+```
 
 # REFERENCES
 - [JavaScript style guide](https://github.com/udacity/frontend-nanodegree-styleguide)
