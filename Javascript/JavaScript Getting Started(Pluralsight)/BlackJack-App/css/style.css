@@ -8,3 +8,12 @@ h1 {
   color: blue;
 
 }
+
+.display-3 {
+  padding-bottom: 10px;
+}
+
+.my-4 {
+  padding-bottom: : 20px;
+  padding-top: 20px;
+}
