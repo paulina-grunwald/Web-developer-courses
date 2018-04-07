@@ -47,10 +47,27 @@ names.shift();
 console.log(names);
 // [ 'John', 'Lynda' ]
 
+
+nums = [1,2,3,4,5];
+console.log(nums.pop());
+// 5
+console.log(nums.shift());
+// 1
+
 console.log("              ")
 
+numbers = [1,2,3,4,5,6,7,8,9,10];
+numbers.splice(4,2);
+console.log(numbers);
+// [ 1, 2, 3, 4, 7, 8, 9, 10 ]
 
 
+numbers2 = [1,2,4, 6 ,7];
+numbers2.splice(2,0,5);
+console.log(numbers2);
+// [ 1, 2, 5, 4, 6, 7 ]
+
+console.log("              ")
 
 ///////////// Boolean ////////////////
 
@@ -71,6 +88,41 @@ console.log(Boolean("a"));
 console.log(Boolean(" "));
 // true
 
+///////////// Conditionals  ////////////////
+
+let type = "fruit"
+
+if (type === "fruit") {
+  console.log("This is fruit");
+}
+else {
+  console.log("This is vegeable");
+}
+
+
+let country = "Romania";
+switch(country){
+  case "Romania":
+    break;
+  case "Poland":
+    console.log("Warsaw");
+    break;
+  default:
+    console.log("Unknown");
+    break;
+}
+// Bucharest
+
+console.log("              ")
+
+
+///////////// Loops ////////////////
+for (let i = 0; i < 3; i++) {
+  console.log(i)
+}
+// 0 1 2
+
+console.log("              ")
 
 ///////////// Functions ////////////////
 
