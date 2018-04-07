@@ -1,10 +1,14 @@
-// Blackjack game code
+// Blackjack Game
 
+/* Blackjack, also known as twenty-one, is a comparing card game between usually several players and a dealer,
+where each player in turn competes against the dealer,
+but players do not play against each other. It is played with one or more decks of 52 cards,
+and is the most widely played casino banking game in the world. */
 
-
-// Card variables
+// Create suits array
 let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
 
+// Create values array
 let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten',
               'Nine', 'Eight', 'Seven', 'Six', 'Five',
               'Four', 'Three', 'Two'];
@@ -68,8 +72,14 @@ stayButton.addEventListener('click', function() {
   showStatus();
 });
 
-// Create deck function
+/*
+Create deck function
+This function creates deck of card by looping over suits and values and
+creating 52 combinations. Each created combination is added to the empty deck.
+*/
+
 function createDeck() {
+  // Create empty array for deck
   let deck = [];
   // Loop through the suits
   for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
