@@ -14,10 +14,10 @@ let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten',
               'Four', 'Three', 'Two'];
 
 // Create DOM variables
-let textArea = document.getElementById('text-area'),
-    newGameButton = document.getElementById('new-game-button'),
-    hitButton = document.getElementById('hit-button'),
-    stayButton = document.getElementById('stay-button');
+let textArea = document.getElementById('text-area');
+let newGameButton = document.getElementById('new-game-button');
+let hitButton = document.getElementById('hit-button');
+let stayButton = document.getElementById('stay-button');
 
 // Game variables (at the start of the game)
 let gameStarted = false,
@@ -27,7 +27,7 @@ let gameStarted = false,
     playerCards = [],
     dealerScore = 0,
     playerScore = 0,
-    desck = [];
+    deck = [];
 
 
 // Hide hitButton and stayButton (this button needs to be hidden before the game is started)
@@ -97,7 +97,7 @@ function createDeck() {
 function shuffleDeck(deck){
   for (let i = 0; i < deck.length; i++){
     // Calc index of the card we want to swap
-    let swapIdx = Math.strunc(Math.random() * deck.length);
+    let swapIdx = Math.trunc(Math.random() * deck.length);
     //Set temporary to temp
     let tmp = deck[swapIdx]
     deck[swapIdx] = deck[i]
