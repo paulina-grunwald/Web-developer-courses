@@ -13,13 +13,11 @@ let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten',
               'Nine', 'Eight', 'Seven', 'Six', 'Five',
               'Four', 'Three', 'Two'];
 
-
-// DOM variables
+// Create DOM variables
 let textArea = document.getElementById('text-area'),
     newGameButton = document.getElementById('new-game-button'),
     hitButton = document.getElementById('hit-button'),
     stayButton = document.getElementById('stay-button');
-
 
 // Game variables (at the start of the game)
 let gameStarted = false,
@@ -115,7 +113,7 @@ function getCardString(card) {
 }
 
 
-// Get next card from the deck
+// Get next card from the deck and shift all the deck
 function getNextCard() {
   return deck.shift();
 }
