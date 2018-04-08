@@ -133,7 +133,7 @@ In Html we would create a paragraph:
 ```html
 <p id="text-area">Custom text</p>
 ```
-In order to access this paragraph in javascript we need to create new variable in which we use special object on which we use .getElementById. In .getEelementById function we pass a name of the object we want to retrieve.
+In order to access this paragraph in javascript we need to create new variable in which we use special object on which we use ``.getElementById``. In .getEelementById function we pass a name of the object we want to retrieve.
 
 
 ```javascript
@@ -144,8 +144,6 @@ paragraph.innerText = "This is paragraph";
 paragraph.style.display = 'none'; //remove it
 paragraph.style.display = 'block'; //add it back
 ```
-
-
 Now we need to add buttons to the index.html file:
 
 ```Html
@@ -153,6 +151,20 @@ Now we need to add buttons to the index.html file:
 <button id="hit-button">Hit</button>
 <button id="stay-button">Stay</button>
 ```
+
+It is easy to handle a button click using javascript. We can get id of the button add it to the addEventListener and execute selected function e.g
+
+```javascript
+
+let startButton = document.getElementById('start-button');
+
+startButton.addEventListener('click', function() {
+  // do something
+});
+
+```
+
+
 and add DOM variables to the script.js:
 
 ```javascript
