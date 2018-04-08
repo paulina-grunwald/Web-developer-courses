@@ -136,13 +136,12 @@ This will result in selecting divs that contain the text Button (its case sensit
 -  ``[attribute^="value"]`` can be used to select elements with an attribute that begins with stated value e.g ``$('input[value^="Events"]')``. ``[attribute$="value"]`` will select elements with an attribute that ends with the stated value and ``[attribute*="value"]`` elements with an attribute that contains stated value.
 
 
-
 [JQuery selectors documentation can be found here](http://api.jquery.com/category/selectors/)
 
 
-
-
 # Interacting with the DOM
+.each(function(index, Element)) can be used to iterate over jQuery objects.
+
 
 
 # Handling Events
