@@ -103,6 +103,7 @@ else {
 let country = "Romania";
 switch(country){
   case "Romania":
+    console.log("Bucharest");
     break;
   case "Poland":
     console.log("Warsaw");
@@ -132,3 +133,43 @@ console.log("              ")
  };
 console.log(square(7));
 // 49
+
+console.log("              ")
+
+///////////// Objects ////////////////
+
+let person = {
+  name: "Mike",
+  age:23,
+  employed: false
+};
+
+console.log(person.name);
+
+function changeStatus(person) {
+  person.employed = true;
+};
+
+changeStatus(person);
+console.log(person);
+// { name: 'Mike', age: 23, employed: true }
+
+
+console.log("                     ");
+///////////// Arrays of objects ////////////////
+
+let animal = [
+  {
+    name: "Max",
+    animalSpecie: "dog",
+    age: 2
+  },
+  {
+    name: "Katsu",
+    animalSpecie: "cat",
+    age: 5
+  }
+];
+
+console.log(animal[1].age);
+// 5
