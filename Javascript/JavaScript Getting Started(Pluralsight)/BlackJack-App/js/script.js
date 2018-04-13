@@ -99,7 +99,7 @@ function shuffleDeck(deck){
     // Calc index of the card we want to swap
     let swapIdx = Math.trunc(Math.random() * deck.length);
     //Set temporary to temp
-    let tmp = deck[swapIdx]
+    let temp = deck[swapIdx]
     deck[swapIdx] = deck[i]
     deck[i] = temp;
   }
