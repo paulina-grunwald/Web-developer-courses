@@ -18,3 +18,5 @@ create-react-app app-name
 3. Start app:
 
   ``npm start``
+
+We use React DOM to bind react application to an element in the HTML document. App component contains hierarchy of react components that create virtual DOM.
