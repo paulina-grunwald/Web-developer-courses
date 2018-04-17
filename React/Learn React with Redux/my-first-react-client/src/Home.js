@@ -2,6 +2,8 @@ import React from 'react'
 import logo from './logo.svg';
 import './App.css';
 
+const paragraphStyles = {backgroundColor: "orange"};
+
 export default function Home() {
 	return(
 
