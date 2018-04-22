@@ -5,22 +5,20 @@ import ReactDOM from 'react-dom';
 import 'font-awesome/css/font-awesome.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
  
-
+var _ = require('lodash');
 var FontAwesome = require('react-fontawesome');
- 
 
 
 const Stars = (props) => {
 
-  const numberOfStarts = 5;
-  let stars = [];
-  for (let i=0; i < numberOfStarts; i++) {
-    stars.push(<i key={i} className="fa fa-star"></i>);
-  }
+  const numberOfStarts = 1 + Math.floor(Math.random()*9);
+  
 
   return (
     <div className="col-5">
-      {stars}
+      {_.range(numberOfStarts).map(i => 
+        <i key = {i} className="fa fa-star"></i>
+      )}
     </div>
     );
 }
@@ -28,7 +26,7 @@ const Stars = (props) => {
 const Button = (props) => {
   return (
       <div className="col-2">
-        <button>+1</button>
+        <button>=</button>
       </div>
     );
 }
@@ -36,20 +34,21 @@ const Button = (props) => {
 const Answer = (props) => {
   return (
       <div className="col-5">
-        ...
+        <span>5</span>
+        <span>6</span>
       </div>
     );
 }
 
 
 const Numbers = (props) => {
+  const arrayOfNumbers = _.range(1,9);
   return (
     <div className="card text-center">
       <div>
-        <span>1</span>
-        <span className="selected">2</span>
-        <span className="used">3</span>
-        <span>4</span>
+        {arrayOfNumbers.map((number, i) =>
+          <span key={i}>{number}</span>
+        )}
       </div>
 
     </div>
