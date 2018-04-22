@@ -38,22 +38,23 @@ const Answer = (props) => {
         <span>6</span>
       </div>
     );
-}
+};
 
 
 const Numbers = (props) => {
-  const arrayOfNumbers = _.range(1,9);
   return (
     <div className="card text-center">
       <div>
-        {arrayOfNumbers.map((number, i) =>
+        {Numbers.list.map((number, i) =>
           <span key={i}>{number}</span>
         )}
       </div>
 
     </div>
   )
-}
+};
+
+Numbers.list = _.range(1,10);
 
 class App extends Component {
   render() {
@@ -71,7 +72,7 @@ class App extends Component {
         
       </div>
     );
-  }
+  };
 }
 
 export default App;
