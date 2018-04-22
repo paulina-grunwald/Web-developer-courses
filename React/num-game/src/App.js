@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import _ from '../node_modules/lodash';
 import ReactDOM from 'react-dom';
@@ -21,7 +20,7 @@ const Button = (props) => {
   switch(props.answerIsCorrect) {
     case true:
       button = 
-        <button className = "btn btn-success">
+        <button className = "btn btn-success" onClick={props.acceptAnswer}>
           <i className = "fa fa-check"></i>
         </button>;
         break;
@@ -62,9 +61,12 @@ const Answer = (props) => {
 
 const Numbers = (props) => {
 	const numberClassName = (number) => {
-		if (props.selectedNumbers.indexOf(number) >= 0) {
+		if (props.usedNumbers.indexOf(number) >= 0) {
+    	return 'used';
+    }
+    if (props.selectedNumbers.indexOf(number) >= 0) {
     	return 'selected';
-    }  	
+    }   	
   };
   return (
     <div className="card text-center">
@@ -87,15 +89,18 @@ class App extends React.Component {
     selectedNumbers: [],
     randomNumberOfStars: 1 + Math.floor(Math.random()*9),
     answerIsCorrect: null,
+    usedNumbers: [],
   };
   selectNumber = (clickedNumber) => {
   	if (this.state.selectedNumbers.indexOf(clickedNumber) >= 0) { return; }
   	this.setState(prevState => ({
+      answerIsCorrect: null,
     	selectedNumbers: prevState.selectedNumbers.concat(clickedNumber)
     }));
   };
   unselectNumber = (clickedNumber) => {
   	this.setState(prevState => ({
+      answerIsCorrect: null,
     	selectedNumbers: prevState.selectedNumbers
       													.filter(number => number !== clickedNumber)
     }));
@@ -108,12 +113,22 @@ class App extends React.Component {
       
     }));
   };
+  acceptAnswer = () => {
+    this.setState(prevState => ({
+      usedNumbers: prevState.usedNumbers.concat(prevState.selectedNumbers),
+      selectedNumbers: [],
+      answerIsCorrect: null,
+      randomNumberOfStars: 1 + Math.floor(Math.random()*9),
+    }));
+
+  };
 
   render() {
   	const { 
       selectedNumbers, 
       randomNumberOfStars, 
       answerIsCorrect, 
+      usedNumbers
     } = this.state;
 
     return (
@@ -124,13 +139,15 @@ class App extends React.Component {
           <Stars numberOfStars={randomNumberOfStars} />
           <Button selectedNumbers={selectedNumbers} 
                   checkAnswer={this.checkAnswer}
-                  answerIsCorrect={answerIsCorrect} />
+                  answerIsCorrect={answerIsCorrect}
+                  acceptAnswer={this.acceptAnswer}/>
           <Answer selectedNumbers={selectedNumbers}
           				unselectNumber={this.unselectNumber} />
         </div>
         <br />
         <Numbers selectedNumbers={selectedNumbers}
-        				 selectNumber={this.selectNumber} />
+                 selectNumber={this.selectNumber}
+                 usedNumbers={usedNumbers} />
       </div>
     );
   }
