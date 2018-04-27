@@ -21,11 +21,18 @@ export const AppIntro = styled.p`
 `;
 
 const spin = keyframes`
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 `;
 
 export const AppLogo = styled.img`
-    animation: ${spin} App-logo-spin infinite 20s linear;
+    animation: ${spin} infinite 20s linear;
     height: 80px;
 `;
+
+
