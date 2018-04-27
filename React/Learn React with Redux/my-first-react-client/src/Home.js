@@ -1,22 +1,21 @@
-import React from 'react'
+import React from 'react';
+import {App, AppHeader, Title, AppIntro, AppLogo} from './styles';
 import logo from './logo.svg';
-import './App.css';
-
 const paragraphStyles = {backgroundColor: "orange"};
 
 export default function Home() {
 	return(
 
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
+      <App>
+        <AppHeader>
+          <AppLogo src={logo} alt="logo" />
+          <Title>Welcome to React</Title>
+        </AppHeader>
+        <AppIntro>
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        </AppIntro>
         <h2>Hot reloading is amazing!</h2>
-      </div>
+      </App>
     );
 	
 }
