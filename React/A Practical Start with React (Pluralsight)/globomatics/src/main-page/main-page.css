@@ -12,3 +12,8 @@
   border-radius: 2px;
   background-color: rgb(255, 190, 166);
 }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
